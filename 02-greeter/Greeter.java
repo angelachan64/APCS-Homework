@@ -10,3 +10,5 @@ public class Greeter {
 	System.out.println("Hello world!");
     }
 }
+
+//Homework 2 COMPLETED
