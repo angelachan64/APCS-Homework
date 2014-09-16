@@ -16,6 +16,7 @@ public class Greeter {
     */
     public void greet() {
 	System.out.println("Hello world!");
+	System.out.println(s);
 	ungreet();
     }
 
