@@ -5,7 +5,11 @@ import java.util.*;
 
 //CODE
 
-public class Greeter {
+public class Greeter3 {
+    /* Attributes go here
+       We call them instance variables
+    */
+    public String greeting = new String("Hello World!");
     /*
       public <- can be used outside of the class
       void <- this DOES NOT return anything you would place a
@@ -20,7 +24,7 @@ public class Greeter {
 	ungreet();
     }
 
-    private void ungreet() {
+    public void ungreet() {
 	System.out.println("I'm out");
     }
 }
