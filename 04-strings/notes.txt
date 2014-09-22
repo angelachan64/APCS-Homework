@@ -1,0 +1,16 @@
+Each variable points to its own memory address
+i.e. s1 points to "hello" and s2 point to "hello" (same thing) but s3 and s4
+create their own new memory by saying new String("hello")
+
+classes :
+    FOR STRINGS
+    	== compares memory addresses
+    	equals method compares the data in the class (i.e. s1.equals(s2))
+	if we want to see if two strings are equal (regardless of memory address)
+	we have to use the equals method
+	method compareTo
+	s1.compareTo(s2)
+		returns 0 if s1 is the same as s2
+		val < 0 if s1 < s2
+		val > 0 if s1 > s2
+	
