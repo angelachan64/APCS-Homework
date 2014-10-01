@@ -42,10 +42,21 @@ public class Loop{
     public String Tri2(int c){
 	String s = "";
 	int count = 1;
+	int n = c;
 	int space = c-1;
 	while (c>0){
 	    while (space>0){
 		s = s + " ";
 		space = space - 1;
 	    }
+	    while (count>0){
+		s = s + "*";
+		count = count - 1;
+	    }
+	    s = s + "\n";
+	    space = space - 1;
+	    c = c - 1;
+	    count = n - space;
+	}
+    }
 }
