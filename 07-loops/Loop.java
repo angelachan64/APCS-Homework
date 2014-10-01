@@ -11,15 +11,15 @@
 public class Loop{
     public String box(int r, int c){
 	String s = "";
-	int r1 = r;
-	while (c>0){
-	    while (r1>0){
+	int c1 = c;
+	while (r>0){
+	    while (c1>0){
 		s = s + "*";
-		r1 = r1 - 1;
+		c1 = c1 - 1;
 	    }
 	    s = s + "\n";
-	    r1 = r;
-	    c = c - 1;
+	    c1 = c;
+	    r = r - 1;
 	}
 	return s;
     }
