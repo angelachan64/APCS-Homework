@@ -23,4 +23,29 @@ public class Loop{
 	}
 	return s;
     }
+    public String Tri1(int c){
+	String s = "";
+	int star = 1;
+	int c1 = 1;
+	while (c > 0){
+	    while (star <= c1){
+		s = s + "*";
+		star = star + 1;
+	    }
+	    s = s + "\n";
+	    c = c - 1;
+	    c1 = c1 + 1;
+	    star = 1;
+	}
+	return s;
+    }
+    public String Tri2(int c){
+	String s = "";
+	int count = 1;
+	int space = c-1;
+	while (c>0){
+	    while (space>0){
+		s = s + " ";
+		space = space - 1;
+	    }
 }
