@@ -1,12 +1,15 @@
 public class StringStuff{
+    /*WORKING*/
     public String nonStart (String a, String b){
 	String aend = a.substring(1);
 	String bend = b.substring(1);
 	return aend + bend;
     }
+    /*WORKING*/
     public String makeAbba(String a, String b){
 	return a + b + b + a;
     }
+    /*WORKING*/
     public int diff21(int n){
 	int a = Math.abs(21-n);
 	if (n<21){
