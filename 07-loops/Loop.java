@@ -54,8 +54,8 @@ public class Loop{
 		count = count - 1;
 	    }
 	    s = s + "\n";
-	    space = space - 1;
 	    c = c - 1;
+	    space = c - 1;
 	    count = n - space;
 	}
 	return s;
