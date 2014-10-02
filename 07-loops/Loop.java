@@ -58,5 +58,6 @@ public class Loop{
 	    c = c - 1;
 	    count = n - space;
 	}
+	return s;
     }
 }
