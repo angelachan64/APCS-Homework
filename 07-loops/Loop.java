@@ -98,18 +98,73 @@ public class Loop{
 		s = s + "*";
 		star = star - 1;
 	    }
-	    star = c1;
+	    star = c1 - 1;
 	    while (star <= c1){
 		s = s + "*";
-		star = star + 1;
-		h = h - 1;
-		h1 = h - 1;
+		star = star - 1;
 	    }
 	    s = s + "\n";
 	    c1 = c1 + 1;
-	    star = c1 + 1;
+	    star = c1 + 2;
 	    h = h - 1;
 	    h1 = h - 1;
+	}
+	return s;
+    }
+    public String diamond(int h){
+	String s = "";
+	int h1 = h;
+	int count = 0;
+	int base = 1;
+	int sbase = h - 2;
+	int space = sbase;
+	int star = base;
+	while (h > 0){
+	    while (space>0){
+		s = s + " ";
+		space = space - 1;
+	    }
+	    space = sbase;
+	    while (star > 0){
+		s = s + "*";
+		star = star - 1;
+	    }
+	    if (count < h1/2){
+		base = base + 2;
+		sbase = sbase - 1;
+	    }
+	    else{
+		base = base - 2;
+		sbase = sbase + 1;
+	    }
+	    star = base;
+	    space = sbase;
+	    h = h - 1;
+	    count = count + 1;
+	}
+	return s;
+    }
+    public String Tri4(int h){
+	String s = "";
+	int star = h;
+	int base = h;
+	int count = 0;
+	int space = count;
+	while (h>0){
+	    while (space > 0){
+		s = s + " ";
+		space = space - 1;
+	    }
+	    while (star > 0){
+		s = s + "*";
+		star = star - 1;
+	    }
+	    base = base - 1;
+	    count = count + 1;
+	    star = base;
+	    space = count;
+	    s = s + "\n";
+	    h = h - 1;
 	}
 	return s;
     }
