@@ -9,6 +9,7 @@
 */
 
 public class Loop{
+    /* HOMEWORK 7A */
     public String box(int r, int c){
 	String s = "";
 	int c1 = c;
@@ -57,6 +58,58 @@ public class Loop{
 	    c = c - 1;
 	    space = c - 1;
 	    count = n - space;
+	}
+	return s;
+    }
+    /*
+    public String tri2(int h){
+	int row = 0;
+	int i;
+	String s = "";
+	while (row<h){
+	    i = 0
+		while (i<h-row-1){
+		    s = s + " ";
+		    i++;
+		}
+	    i = 0;
+	    while(i<row+1){
+		s = s + "*";
+		i++;
+	    }
+	    s = s + "\n";
+	    row++;
+	}
+	return s;
+    }
+    */
+    /* HOMEWORK 7B */
+    public String Tri3(int h){
+	int c1 = 0;
+	String s = "";
+	int h1 = h-1;
+	int star = 1;
+	while (h>0){
+	    while (h1>0){
+		s = s + " ";
+		h1 = h1 - 1;
+	    }
+	    while (star>0){
+		s = s + "*";
+		star = star - 1;
+	    }
+	    star = c1;
+	    while (star <= c1){
+		s = s + "*";
+		star = star + 1;
+		h = h - 1;
+		h1 = h - 1;
+	    }
+	    s = s + "\n";
+	    c1 = c1 + 1;
+	    star = c1 + 1;
+	    h = h - 1;
+	    h1 = h - 1;
 	}
 	return s;
     }
