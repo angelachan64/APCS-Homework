@@ -180,7 +180,7 @@ public class Loop{
 		star = star - 1;
 	    }
 	    else{
-		if (ccount ==  1 || ccount = c){
+		if (ccount ==  1 || ccount == c){
 		    s = s + "*";
 		    ccount = ccount + 1;
 		}
