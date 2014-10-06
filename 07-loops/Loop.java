@@ -164,27 +164,32 @@ public class Loop{
 	}
 	return s;
     }
-    /* HOMEWORK 7B */
+    /* HOMEWORK 7C */
     public String frame(int r, int c){
 	String s = "";
 	int rcount = 1;
 	int ccount = 1;
 	int star = c;
-	while (rcount < r){
+	while (rcount <= r){
 	    if ((rcount == 1 || rcount == r) && star > 0){
-		s = s + "*";
-		star = star - 1;
+		while (star > 0){
+		    s = s + "*";
+		    star = star - 1;
+		}
 	    }
 	    else{
-		if (ccount ==  1 || ccount == c){
-		    s = s + "*";
-		    ccount = ccount + 1;
-		}
-		else{
-		    s = s + " ";
-		    ccount = ccount + 1;
+		while (ccount <= c){
+		    if (ccount ==  1 || ccount == c){
+			s = s + "*";
+			ccount = ccount + 1;
+		    }
+		    else{
+			s = s + " ";
+			ccount = ccount + 1;
+		    }
 		}
 	    }
+	    s = s + "\n";
 	    rcount = rcount + 1;
 	    ccount = 1;
 	    star = c;
