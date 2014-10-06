@@ -98,14 +98,9 @@ public class Loop{
 		s = s + "*";
 		star = star - 1;
 	    }
-	    star = c1 - 1;
-	    while (star <= c1){
-		s = s + "*";
-		star = star - 1;
-	    }
 	    s = s + "\n";
 	    c1 = c1 + 1;
-	    star = c1 + 2;
+	    star = 2*c1 + 1;
 	    h = h - 1;
 	    h1 = h - 1;
 	}
@@ -137,6 +132,7 @@ public class Loop{
 		base = base - 2;
 		sbase = sbase + 1;
 	    }
+	    s = s + "\n";
 	    star = base;
 	    space = sbase;
 	    h = h - 1;
@@ -165,6 +161,38 @@ public class Loop{
 	    space = count;
 	    s = s + "\n";
 	    h = h - 1;
+	}
+	return s;
+    }
+    /* HOMEWORK 7C */
+    public String stringSplosion(String str) {
+	int i = 2;
+	String s = str.substring(0,1);
+	while (i<=str.length()){
+	    s = s + str.substring(0,i);
+	    i = i + 1;
+	}
+	return s;
+    }
+    public String stringX(String str) {
+	int i = 1;
+	int len = str.length();
+	String s = "";
+	if (len != 0){
+	    s = str.substring(0,1);
+	    str = str.substring(1);
+	}
+	while (i<len){
+	    if (i == len-1){
+		s = s + str;
+	    }
+	    else{
+		if (str.substring(0,1).compareTo("x")!=0){
+		    s = s + str.substring(0,1);
+		}
+	    }
+	    str=str.substring(1);
+	    i = i + 1;
 	}
 	return s;
     }
