@@ -1,0 +1,4 @@
+inheritance
+- used in i.e. making rpgs
+- a class can be based on another class or it can extend another class
+example in code
