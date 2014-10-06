@@ -7,5 +7,8 @@ public class Driver{
 	System.out.println(s.Tri3(4));
 	System.out.println(s.diamond(5));
 	System.out.println(s.Tri4(4));
+	System.out.println(s.frame(5,4));
+	System.out.println(s.stringSplosion("Explode"));
+	System.out.println(s.stringX("xhxelloxxpexrxsonx"));
     }
 }

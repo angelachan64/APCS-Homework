@@ -164,8 +164,34 @@ public class Loop{
 	}
 	return s;
     }
-    /* HOMEWORK 7C */
-    public String stringSplosion(String str) {
+    /* HOMEWORK 7B */
+    public String frame(int r, int c){
+	String s = "";
+	int rcount = 1;
+	int ccount = 1;
+	int star = c;
+	while (rcount < r){
+	    if ((rcount == 1 || rcount == r) && star > 0){
+		s = s + "*";
+		star = star - 1;
+	    }
+	    else{
+		if (ccount ==  1 || ccount == c){
+		    s = s + "*";
+		    ccount = ccount + 1;
+		}
+		else{
+		    s = s + " ";
+		    ccount = ccount + 1;
+		}
+	    }
+	    rcount = rcount + 1;
+	    ccount = 1;
+	    star = c;
+	}
+	return s;
+    }
+    public String stringSplosion(String str){
 	int i = 2;
 	String s = str.substring(0,1);
 	while (i<=str.length()){
@@ -174,7 +200,7 @@ public class Loop{
 	}
 	return s;
     }
-    public String stringX(String str) {
+    public String stringX(String str){
 	int i = 1;
 	int len = str.length();
 	String s = "";
@@ -191,7 +217,7 @@ public class Loop{
 		    s = s + str.substring(0,1);
 		}
 	    }
-	    str=str.substring(1);
+	    str = str.substring(1);
 	    i = i + 1;
 	}
 	return s;
