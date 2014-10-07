@@ -2,6 +2,7 @@
 
 public class BaseChar{
     private int health=20;
+    private int mana = 0;
     public int getHealth(){
 	return health;
     }
