@@ -14,3 +14,10 @@ you can think of this as levels
 - subclass : (has own things)
              i.e. private int healthBoost
 - subclass has access to public items in superclass
+if you call a public method in the superclass, it can access private stuff on
+its level
+- c.setHealth(150) accesses health on BaseChar level
+- w.setHealth(200) accesses health on Warrior level
+there's no getHealth in Warrior and therefore the system calls BaseChar
+- if you want to use a method in a subclass, you must have that method in the
+  subclass or else it will go to the superclass
