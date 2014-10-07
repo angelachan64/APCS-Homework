@@ -1,0 +1,16 @@
+inheritance
+- used in i.e. making rpgs
+- a class can be based on another class or it can extend another class
+example in code
+
+health is private in BaseChar and therefore you can't access it within Warrior
+- you can fix by saying public int health
+  - BUT you don't want health to be private
+- or you could not use baseSetHealth and instead just setHealth that extends
+  into Warrior
+you can think of this as levels
+- superclass : private int health
+               public int setHealth
+- subclass : (has own things)
+             i.e. private int healthBoost
+- subclass has access to public items in superclass
