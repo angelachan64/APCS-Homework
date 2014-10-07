@@ -27,3 +27,12 @@ there's no getHealth in Warrior and therefore the system calls BaseChar
 suppose we want to get the health of the superclass
 - if you're in a subclass, subclasses can access superclass public stuff via
   super._____()
+
+when the subclass has a method of the same name as the superclass, it's
+called overriding
+- use super to get to the superclass method or variable
+- vs. overloading = multiple methods, same name, different signature and
+  parameter types
+
+most problems with java won't need inheritance because you could just make
+new classes
