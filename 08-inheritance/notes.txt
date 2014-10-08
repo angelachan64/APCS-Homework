@@ -39,3 +39,19 @@ new classes
 
 if you have a method in the subclass and not in the superclass, you can only
 use it in the subclass !!
+
+Mage under baseChar has getHealth and adds getMana
+- however, if you only have a baseChar, it can use getHealth but can't use
+  getMana
+
+casting - tells Java to look at c which is a BaseChar as a Mage for the purposes
+	  of the assignment
+
+this._____ refers to the instance of the class you're using
+- c1.setName("abc"); 	 	     	 c2.setName("xyz");
+  this.name				 this.name
+  (c1's instance variable name)		 (c2's instance variable name)
+
+baseChar other - anything that is another baseChar I am going to attack
+
+to String is automatically called when you put a class instance in a String

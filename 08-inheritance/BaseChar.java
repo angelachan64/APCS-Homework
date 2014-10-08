@@ -9,4 +9,17 @@ public class BaseChar{
     public void setHealth(int i){
 	health = i;
     }
+    private String name;
+    public void setName(String name){
+	this.name = name;
+    }
+    public String getName(){
+	return name;
+    }
+    public void attack(BaseChar other){
+	System.out.println(this.getName() + " is attacking " + other.getName());
+    }
+    public String toString(){
+	return this.getName();
+    }
 }
