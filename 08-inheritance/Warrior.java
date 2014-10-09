@@ -6,4 +6,7 @@ public class Warrior extends BaseChar{
     public int getHealth(){
 	return health + super.getHealth() + healthBoost;
     }
+    public Warrior(String n){
+	setName(n);
+    }
 }

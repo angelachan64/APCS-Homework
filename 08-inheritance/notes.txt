@@ -55,3 +55,13 @@ this._____ refers to the instance of the class you're using
 baseChar other - anything that is another baseChar I am going to attack
 
 to String is automatically called when you put a class instance in a String
+
+inheritance constructor "rules"
+-     Base (super)			Sub		Status
+		
+	default			      default		  OK
+       zero param		    nothing else	  OK
+	nothing			      0 param 		  OK
+	1 param			      nothing		 error
+
+constructors are public but they have the same name as the class and has params
