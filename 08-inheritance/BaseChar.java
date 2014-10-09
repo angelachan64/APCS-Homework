@@ -3,6 +3,14 @@
 public class BaseChar{
     private int health=20;
     private int mana = 0;
+    /*
+    public BaseChar(){
+	setName("Default");
+    }
+    */
+    public BaseChar(String n){
+	setName(n);
+    }
     public int getHealth(){
 	return health;
     }
@@ -13,9 +21,11 @@ public class BaseChar{
     public void setName(String name){
 	this.name = name;
     }
+    /*
     public void setName(){
 	this.name = "Diddlysquat";
     }
+    */
     public String getName(){
 	return name;
     }

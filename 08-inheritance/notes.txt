@@ -63,5 +63,24 @@ inheritance constructor "rules"
        zero param		    nothing else	  OK
 	nothing			      0 param 		  OK
 	1 param			      nothing		 error
+	1 param			      1 param		 error
+      0 & 1 param		      1 param		  OK
 
 constructors are public but they have the same name as the class and has params
+
+when you call a constructor in a subclass, it automatically calls the
+constructor in the superclass for you
+- once we put in a one param constructor, we're setting that up instead of the
+  default constructor and the subclass can't figure it out
+- solve :
+  - go to base class & add a 0 parameter constructor (keep 1 param constructor)
+    - the first thing that happens when you call the constructor of the subclass
+      it calls the 0 param constructor of the superclass
+    - the error occured because it could not find the 0 param constructor of the
+      superclass
+  - call super (not super.___, just super)
+    - calls the superclass's zero parameter
+    - even if you don't write this, the super constructor will always be called
+      as the first line of a subclass' constructor
+  - if no 0 param constructor, use super(variable)
+    - calls the 1 param constructor in the superclass

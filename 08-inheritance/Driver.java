@@ -16,7 +16,7 @@ public class Driver{
 	w.attack(w);
 	System.out.println(w.toString());
 	*/
-	Warrior w = new  Warrior("Groo");
+	Warrior w = new  Warrior("Diddlysquat");
 	System.out.println(w.getName());
     }
 }
