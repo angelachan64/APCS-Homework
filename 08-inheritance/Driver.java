@@ -11,7 +11,7 @@ public class Driver{
 	c2 = new Mage();
 	*/
 	w.setName("Groo");
-	m.setName("Mr. Sage");
+	m.setName();
 	w.attack(m);
 	m.attack(w);
 	w.attack(w);
