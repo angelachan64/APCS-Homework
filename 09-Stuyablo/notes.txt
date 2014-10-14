@@ -4,3 +4,20 @@ For Stuyablo we need:
 
 random has function R(x) that goes through calculations and returns a number
 that appears to be random but is actually not
+
+use scanner for input
+- scanner is slow but incredibly flexible
+  - can read from a file
+    - i.e. if you have a file called myNumbers, you can read from the file using
+      the scanner
+String input = "1 fish 2 fish red fish blue fish";
+Scanner s = new Scanner(input).useDelimiter("//s*fish//s*")
+- fish acting as a comma
+Scanner s = new Scanner(input);
+System.out.println(s.next());
+- calls each successive part
+
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter a value:")
+int i = sc.nextInt();
+System.out.println(i);
