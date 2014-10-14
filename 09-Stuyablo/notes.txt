@@ -1,0 +1,6 @@
+For Stuyablo we need:
+- Random numbers
+- User input
+
+random has function R(x) that goes through calculations and returns a number
+that appears to be random but is actually not
