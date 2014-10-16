@@ -21,3 +21,21 @@ Scanner sc = new Scanner(System.in);
 System.out.println("Enter a value:")
 int i = sc.nextInt();
 System.out.println(i);
+
+thread sleep can pause program for x amount of milliseconds
+System.out.println("About to do something");
+try{
+Thread.sleep(2000);
+} catch (Exception e){}
+System.out.println("Did it")
+
+while (not done){
+each player - atack
+     	    - run
+	    - spell > cast (Char other)
+	    - potion
+break :
+if (run away is successful){
+break;
+}
+breaks out of loop

@@ -8,6 +8,7 @@ public class Driver{
 	    //System.out.println(val);
 	    System.out.println(r.nextInt(100));
 	}
+	/*
 	Scanner sc = new Scanner(System.in);
 	String input = "";
 	while (!input.equals("done")){
@@ -15,5 +16,11 @@ public class Driver{
 	    input = sc.nextLine();
 	    System.out.println(input);
 	}
+	*/
+	System.out.println("About to do something");
+	try{
+	    Thread.sleep(2000);
+	} catch (Exception e){}
+	System.out.println("Did it");
     }
 }
