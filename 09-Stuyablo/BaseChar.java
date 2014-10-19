@@ -1,4 +1,4 @@
-public class main BaseChar{
+public class BaseChar{
     private int health,maxhealth = 20;
     private int mana,maxmana = 15;
     private int DEX = 10;
@@ -19,13 +19,59 @@ public class main BaseChar{
 	return this.name;
     }
     public void levelUp(){
-	this.level = level + 1;
+	this.LVL = LVL + 1;
 	this.CHA = CHA + 2;
 	this.EXP = 0;
     }
-    public void getStat(String stat){
-	
+    public int getmaxhealth(){
+	    return this.maxhealth;
     }
-    public void addStats(String stat,int change){
+    public int getmaxmana(){
+        return this.maxmana;
+    }
+    public int getSTR(){
+        return this.STR;
+    }
+    public int getDEF(){
+        return this.DEF;
+    }
+    public int getINT(){
+        return this.INT;
+    }
+    public int getDEX(){
+        return this.DEX;
+    }
+    public int getLUK(){
+        return this.LUK;
+    }
+    public int getCHA(){
+        return this.CHA;
+    }
+    public int getLVL(){
+        return this.LVL;
+    }
+    public int getEXP(){
+        return this.EXP;
+    }
+    public void addmaxhealth(int boost){
+        this.maxhealth = getmaxhealth() + boost;
+    }
+    public void addmaxmana(int boost){
+        this.maxmana = getmaxmana() + boost;
+    }
+    public void addSTR(int boost){
+        this.STR = getSTR() + boost;
+    }
+    public void addDEF(int boost){
+        this.DEF = getDEF() + boost;
+    }
+    public void addINT(int boost){
+        this.INT = getINT() + boost;
+    }
+    public void addDEX(int boost){
+        this.DEX = getDEX() + boost;
+    }
+    public void addLUK(int boost){
+        this.LUK = getLUK() + boost;
     }
 }
