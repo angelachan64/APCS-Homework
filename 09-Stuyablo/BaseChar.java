@@ -9,16 +9,16 @@ public class main BaseChar{
     private int CHA = 8;
     private int LVL = 1;
     private int EXP = 0;
-    private int maxEXP = (5*LVL10+(2*LVL))+;
+    private int maxEXP = (5*LVL+10+(2*LVL));
     private int giveEXP = (LVL*2);
     private String name = "";
     public void inputName(String name){
 	this.name = name;
     }
-    public String getName{
-	return name;
+    public String getName(){
+	return this.name;
     }
-    public void levelUp{
+    public void levelUp(){
 	this.level = level + 1;
 	this.CHA = CHA + 2;
 	this.EXP = 0;
