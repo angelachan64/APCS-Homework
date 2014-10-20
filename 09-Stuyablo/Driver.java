@@ -2,11 +2,13 @@ import java.util.*;
 
 public class Driver{
     public static void main(String[]args){
+    	Random rand = new Random();
     	BaseChar character = new BaseChar();
     	Berserker berserker = new Berserker();
     	Necromancer necromancer = new Necromancer();
     	Assassin assassin = new Assassin();
     	Archer archer = new Archer();
+    	Ogre ogre = new Ogre();
 		Scanner sc = new Scanner(System.in);
 		String input = "";
 		String charType = "";
@@ -60,7 +62,8 @@ public class Driver{
 			}
 		}
 		input = "";
-		while (input.equals("")){
+		String enc = "false";
+		/*while (input.equals("")){
 			System.out.println("Would you like to check your stats?");
 			input = sc.nextLine();
 			if (input.equals("Yes")){
@@ -77,6 +80,55 @@ public class Driver{
 					System.out.println(archer.getStats());
 				}
 			}
+		}*/
+		System.out.println("You find yourself in a cave. You have just woken up and you are incredibly confused.");
+		System.out.println("You try to think really hard about what you last remember but that hurts your head so you stop.");
+		System.out.println("The pain in your head reminds you that the last thing you remember is an ogre kidnapping your family.");
+		System.out.println("Like, your entire family.");
+		System.out.println("Stupid brute probably knocked you out too and dragged you to his lair.");
+		System.out.println("He can't be far from here.");
+		while (input.equals("")){
+			System.out.println("What would you like to do?");
+			input = sc.nextLine();
+			String word1 = "";
+			String word2 = "";
+			int indexSpace = input.indexOf(" ");
+			if (indexSpace==-1 || input.length()-1 == indexSpace){
+				System.out.println("Uh, yeah, that's not gonna work.");
+			}
+			else{
+				word1 = input.substring(0,indexSpace);
+				word2 = input.substring(indexSpace+1);
+			}
+			if (enc.equals("true")){
+				if (word1.equals("Attack")){
+					System.out.println("You decide to attack the enemy.");
+					enc = "false";
+				}
+				else if (word1.equals("Flee")){
+					System.out.println("You decide to flee from the enemy.");
+					enc = "false";
+				}
+				else if (word1.equals("Sneak")){
+					System.out.println("You decide to try to backstab the enemy.");
+					enc = "false";
+				}
+				else {
+					System.out.println("You can't do that.");
+				}
+			}
+			else if (word1.equals("Move")){
+				System.out.println("You go " + word2 + " a few steps.");
+				float ogreEnc = rand.nextFloat();
+				if (ogreEnc*100>75){
+					System.out.println("You see an ogre in the distance.");
+					enc = "true";
+				}
+			}
+			else{
+				System.out.println("You can't do that.");
+			}
+			input = "";
 		}
 	}
 }
