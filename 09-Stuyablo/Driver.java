@@ -21,7 +21,7 @@ public class Driver{
 			System.out.println("Are you sure your name is " + character.getName() + "?");
 			input = sc.nextLine();
 			if (input.equals("Yes")){
-				System.out.println("Alright then");
+				System.out.println("Alright then.");
 			}
 			else if (input.equals("No")){
 				input = "";
@@ -101,9 +101,39 @@ public class Driver{
 				word2 = input.substring(indexSpace+1);
 			}
 			if (enc.equals("true")){
-				if (word1.equals("Attack")){
+			    if (word1.equals("Attack")){
 					System.out.println("You decide to attack the enemy.");
+					int opphealth = ogre.gethealth();
+					int oppSTR = ogre.getSTR();
+					int oppDEF = ogre.getDEF() - 10;
+					int playerATK,playerhealth,playerDEF,playerINT,playerDEX,playerLUK,playermana;
+					if (charType.equals("Berserker")){
+					    playerhealth = berserker.gethealth();
+					    playerATK = berserker.getSTR();
+					    playerDEF = berserker.getDEF() - 10;
+					}
+					else if (charType.equals("Necromancer")){
+					    playerhealth = necromancer.gethealth();
+					    playermana = necromancer.getmana();
+					    playerATK = necromancer.getINT();
+					    playerDEF = necromancer.getDEF() - 10;
+					}
+					else if (charType.equals("Assassin")){
+					    playerhealth = assassin.gethealth();
+					    playerATK = assassin.getLUK();
+					    playerDEF = assassin.getDEF() - 10;
+					}
+					else{
+					    playerhealth = archer.gethealth();
+					    playerATK = archer.getDEX();
+					    playerDEF = archer.getDEF() - 10;
+					}
+					int dmg = 1.1 * playerATK + (rand.nextInt(6) - 3);
+					int affect = (oppDEF * -0.4)/1;
+					while (ogre.gethealth()>0){
+					    int dmg = 1.1 * playerATK + (rand.nextInt(6) - 3);
 					enc = "false";
+					}
 				}
 				else if (word1.equals("Flee")){
 					System.out.println("You decide to flee from the enemy.");

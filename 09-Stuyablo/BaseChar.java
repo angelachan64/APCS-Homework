@@ -29,6 +29,12 @@ public class BaseChar{
     public int getmaxmana(){
         return this.maxmana;
     }
+    public int gethealth(){
+	return this.health;
+    }
+    public int getmana(){
+	return this.mana;
+    }
     public int getSTR(){
         return this.STR;
     }
