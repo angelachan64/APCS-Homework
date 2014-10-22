@@ -1,16 +1,16 @@
 public class BaseChar{
-    private int health,maxhealth = 20;
-    private int mana,maxmana = 15;
-    private int DEX = 10;
-    private int STR = 10;
-    private int DEF = 10;
-    private int LUK = 10;
-    private int INT = 10;
-    private int CHA = 8;
-    private int LVL = 1;
-    private int EXP = 0;
-    private int maxEXP = (5*LVL+10+(2*LVL));
-    private int giveEXP = (LVL*2);
+    private double health,maxhealth = 20;
+    private double mana,maxmana = 15;
+    private double DEX = 10;
+    private double STR = 10;
+    private double DEF = 10;
+    private double LUK = 10;
+    private double INT = 10;
+    private double CHA = 8;
+    private double LVL = 1;
+    private double EXP = 0;
+    private double maxEXP = (5*LVL+10+(2*LVL));
+    private double giveEXP = (LVL*2);
     private String name = "";
     public void inputName(String name){
 	this.name = name;
@@ -23,61 +23,61 @@ public class BaseChar{
 	this.CHA = CHA + 2;
 	this.EXP = 0;
     }
-    public int getmaxhealth(){
+    public double getmaxhealth(){
 	    return this.maxhealth;
     }
-    public int getmaxmana(){
+    public double getmaxmana(){
         return this.maxmana;
     }
-    public int gethealth(){
-	return this.health;
+    public double gethealth(){
+        return this.health;
     }
-    public int getmana(){
-	return this.mana;
+    public double getmana(){
+        return this.mana;
     }
-    public int getSTR(){
+    public double getSTR(){
         return this.STR;
     }
-    public int getDEF(){
+    public double getDEF(){
         return this.DEF;
     }
-    public int getINT(){
+    public double getINT(){
         return this.INT;
     }
-    public int getDEX(){
+    public double getDEX(){
         return this.DEX;
     }
-    public int getLUK(){
+    public double getLUK(){
         return this.LUK;
     }
-    public int getCHA(){
+    public double getCHA(){
         return this.CHA;
     }
-    public int getLVL(){
+    public double getLVL(){
         return this.LVL;
     }
-    public int getEXP(){
+    public double getEXP(){
         return this.EXP;
     }
-    public void addmaxhealth(int boost){
+    public void addmaxhealth(double boost){
         this.maxhealth = getmaxhealth() + boost;
     }
-    public void addmaxmana(int boost){
+    public void addmaxmana(double boost){
         this.maxmana = getmaxmana() + boost;
     }
-    public void addSTR(int boost){
+    public void addSTR(double boost){
         this.STR = getSTR() + boost;
     }
-    public void addDEF(int boost){
+    public void addDEF(double boost){
         this.DEF = getDEF() + boost;
     }
-    public void addINT(int boost){
+    public void addINT(double boost){
         this.INT = getINT() + boost;
     }
-    public void addDEX(int boost){
+    public void addDEX(double boost){
         this.DEX = getDEX() + boost;
     }
-    public void addLUK(int boost){
+    public void addLUK(double boost){
         this.LUK = getLUK() + boost;
     }
 }

@@ -1,6 +1,6 @@
 public class Berserker extends BaseChar{
-    private int healthBoost = 10;
-    private int strengthBoost = 5;
+    private double healthBoost = 10;
+    private double strengthBoost = 5;
     public void inputName(String name){
         super.inputName(name);
     }
@@ -21,5 +21,20 @@ public class Berserker extends BaseChar{
         s = s + "Your dexterity is " + this.getDEX() + "\n";
         s = s + "Your luck is " + this.getLUK();
         return s;
+    }
+    public void mutilate(BaseChar other){
+        System.out.println(this + " hacks away at  Ogre, grunting with each yank.");
+        
+    }
+    public void sweepingonslaught(BaseChar other){
+        System.out.println(this + " swings his axe around, slicing through Ogre");
+        
+    }
+    public void guillotine(BaseChar other){
+        System.out.println(this + " brings down his massive axe, aiming for Ogre's throat.");
+    }
+    public void bloodbath(BaseChar other){
+        System.out.println(this + " goes on a rampage, devastating anyone who stands in his way, including Ogre");
+        
     }
 }
