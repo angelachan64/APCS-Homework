@@ -9,6 +9,7 @@ public class Berserker extends BaseChar{
     }
     public void boost(){
         super.addmaxhealth(this.healthBoost);
+        super.addhealth(this.healthBoost);
         super.addSTR(this.strengthBoost);
     }
     public String getStats(){

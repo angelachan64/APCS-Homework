@@ -101,68 +101,83 @@ public class Driver{
 				word1 = input.substring(0,indexSpace);
 				word2 = input.substring(indexSpace+1);
 			}
-			if (word1.equals("Attack")){
-				System.out.println("You decide to attack the enemy.");
-				double opphealth = ogre.gethealth();
-				double oppSTR = ogre.getSTR();
-				double oppDEF = ogre.getDEF() - 10;
-				double playerATK,playerhealth,playerDEF,playerINT,playerDEX,playerLUK,playermana,playermaxhealth,playermaxmana;
-				if (charType.equals("Berserker")){
-			    	playerhealth = berserker.gethealth();
-			    	playermaxhealth = berserker.getmaxhealth();
-				   	playerATK = berserker.getSTR();
-					playerDEF = berserker.getDEF() - 10;
-				}
-				else if (charType.equals("Necromancer")){
-			    	playerhealth = necromancer.gethealth();
-			    	playermaxhealth = necromancer.getmaxhealth();
-			    	playermana = necromancer.getmana();
-			    	playermaxmana = necromancer.getmaxmana();
-			    	playerATK = necromancer.getINT();
-				   	playerDEF = necromancer.getDEF() - 10;
-				}
-				else if (charType.equals("Assassin")){
-			    	playerhealth = assassin.gethealth();
-			    	playermaxhealth = assassin.getmaxhealth();
-			    	playerATK = assassin.getLUK();					    	
-			    	playerDEF = assassin.getDEF() - 10;
-				}
-				else{
-			    	playerhealth = archer.gethealth();
-			    	playermaxhealth = archer.getmaxhealth();
-			    	playerATK = archer.getDEX();
-			    	playerDEF = archer.getDEF() - 10;
-				}
-				double affect = (oppDEF * -0.4)/1;
-				double oppaffect = (playerDEF * -0.4)/1;
-				System.out.println(opphealth + "," + playerhealth);
-				while (opphealth > 0 && playerhealth > 0 && enc.equals("true")){
-					double dmg = 1.1 * playerATK + (rand.nextInt(6) - 3) - affect;
-					double oppdmg = 1.1* oppSTR + (rand.nextInt(6) - 3) - oppaffect;
-					System.out.println("Do you want to attack, use an ability, use an item, or charm the enemy?");
-					input = sc.nextLine();
-					indexSpace = input.indexOf(" ");
-					word1 = input.substring(0,indexSpace);
-					word2 = input.substring(indexSpace + 1);
-					if (word1.equals("Attack")){
-						opphealth = opphealth - (dmg - affect);
-						playerhealth = playerhealth - (oppdmg - oppaffect);
-						if (charType.equals("Berserker")){
-							System.out.println("You swing your axe wildly at the opponent. Somehow you hit him.");
-						}
-						else if (charType.equals("Necromancer")){
-						System.out.println("You gather a ball of dark matter and fling it at your opponent. You actually hit him.");
-						}
-						else if (charType.equals("Assassin")){
-							System.out.println("You try to swiftly stab your enemy but you clumsily stumble into a wall. You manage to jab him anyways. Good enough.");
-						}
-						else{
-								System.out.println("You aim for your enemy's heart but you get really nervous and hit his arm. Darnit.");
-						}
-						System.out.println("Your opponent lost " + dmg + " HP and now has " + opphealth + " HP left.");
-						System.out.println("The ogre charges at you and you dodge, but he manages to smash his club into your stomach. Ouch, you k bro?");
-						System.out.println("You lost " + oppdmg + " HP and you now have " + playerhealth + " HP left.");
+			if (enc.equals("true")){
+				if (word1.equals("Attack")){
+					System.out.println("You decide to attack the enemy.");
+					double opphealth = ogre.gethealth();
+					double oppSTR = ogre.getSTR();
+					double oppDEF = ogre.getDEF() - 10;
+					double playerATK,playerhealth,playerDEF,playerINT,playerDEX,playerLUK,playermana,playermaxhealth,playermaxmana;
+					if (charType.equals("Berserker")){
+				    	playerhealth = berserker.gethealth();
+				    	playermaxhealth = berserker.getmaxhealth();
+					   	playerATK = berserker.getSTR();
+						playerDEF = berserker.getDEF() - 10;
 					}
+					else if (charType.equals("Necromancer")){
+				    	playerhealth = necromancer.gethealth();
+			    		playermaxhealth = necromancer.getmaxhealth();
+				    	playermana = necromancer.getmana();
+				    	playermaxmana = necromancer.getmaxmana();
+				    	playerATK = necromancer.getINT();
+					   	playerDEF = necromancer.getDEF() - 10;
+					}
+					else if (charType.equals("Assassin")){
+				    	playerhealth = assassin.gethealth();
+				    	playermaxhealth = assassin.getmaxhealth();
+			    		playerATK = assassin.getLUK();					    	
+			    		playerDEF = assassin.getDEF() - 10;
+					}
+					else{
+				    	playerhealth = archer.gethealth();
+				    	playermaxhealth = archer.getmaxhealth();
+			    		playerATK = archer.getDEX();
+			    		playerDEF = archer.getDEF() - 10;
+					}
+					double affect = (oppDEF * -0.4)/1;
+					double oppaffect = (playerDEF * -0.4)/1;
+					System.out.println(opphealth + "," + playerhealth);
+					while (opphealth > 0 && playerhealth > 0 && enc.equals("true")){
+						double dmg = 1.1 * playerATK + (rand.nextInt(6) - 3) - affect;
+						double oppdmg = 1.1* oppSTR + (rand.nextInt(6) - 3) - oppaffect;
+						System.out.println("Do you want to attack, use an ability, use an item, or charm the enemy?");
+						input = sc.nextLine();
+						indexSpace = input.indexOf(" ");
+						word1 = input.substring(0,indexSpace);
+						word2 = input.substring(indexSpace + 1);
+						if (word1.equals("Attack")){
+							opphealth = opphealth - (dmg - affect);
+							playerhealth = playerhealth - (oppdmg - oppaffect);
+							if (charType.equals("Berserker")){
+								System.out.println("You swing your axe wildly at the opponent. Somehow you hit him.");
+							}
+							else if (charType.equals("Necromancer")){
+							System.out.println("You gather a ball of dark matter and fling it at your opponent. You actually hit him.");
+							}
+							else if (charType.equals("Assassin")){
+								System.out.println("You try to swiftly stab your enemy but you clumsily stumble into a wall. You manage to jab him anyways. Good enough.");
+							}
+							else{
+									System.out.println("You aim for your enemy's heart but you get really nervous and hit his arm. Darnit.");
+							}
+							System.out.println("Your opponent lost " + dmg + " HP and now has " + opphealth + " HP left.");
+							System.out.println("The ogre charges at you and you dodge, but he manages to smash his club into your stomach. Ouch, you k bro?");
+							System.out.println("You lost " + oppdmg + " HP and you now have " + playerhealth + " HP left.");
+						}
+					}
+					if (charType.equals("Berserker")){
+						berserker.resethealth();
+					}
+					else if (charType.equals("Assassin")){
+						assassin.resethealth();
+					}
+					else if (charType.equals("Necromancer")){
+						necromancer.resethealth();
+					}
+					else {
+						archer.resethealth();
+					}
+				}
 				else if (word1.equals("Flee")){
 					System.out.println("You decide to flee from the enemy.");
 					enc = "false";
@@ -175,10 +190,10 @@ public class Driver{
 					System.out.println("You can't do that.");
 				}
 				input = "";
-				}
+				enc = "false";
 			}
-			if (word1.equals("Move")){
-				System.out.println("You go " + word2 + " a few steps.");
+			else if(word1.equals("Move")){
+			System.out.println("You go " + word2 + " a few steps.");
 				float ogreEnc = rand.nextFloat();
 				if (ogreEnc*100>75){
 					System.out.println("You see an ogre in the distance.");

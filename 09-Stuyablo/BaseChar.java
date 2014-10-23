@@ -1,6 +1,8 @@
 public class BaseChar{
-    private double health,maxhealth = 20;
-    private double mana,maxmana = 15;
+    private double maxhealth = 20;
+    private double health = 20;
+    private double maxmana = 15;
+    private double mana = 15;
     private double DEX = 10;
     private double STR = 10;
     private double DEF = 10;
@@ -59,11 +61,20 @@ public class BaseChar{
     public double getEXP(){
         return this.EXP;
     }
+    public void resethealth(){
+        this.health = getmaxhealth();
+    }
     public void addmaxhealth(double boost){
         this.maxhealth = getmaxhealth() + boost;
     }
+    public void addhealth(double boost){
+        this.health = gethealth() + boost;
+    }
     public void addmaxmana(double boost){
         this.maxmana = getmaxmana() + boost;
+    }
+    public void addmana(double boost){
+        this.mana = gethealth() + boost;
     }
     public void addSTR(double boost){
         this.STR = getSTR() + boost;

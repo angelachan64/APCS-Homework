@@ -9,6 +9,7 @@ public class Necromancer extends BaseChar{
     }
     public void boost(){
         super.addmaxmana(this.manaBoost);
+        super.addmana(this.manaBoost);
         super.addINT(this.intelBoost);
     }
     public String getStats(){
