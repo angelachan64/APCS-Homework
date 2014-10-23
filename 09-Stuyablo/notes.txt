@@ -78,7 +78,7 @@ abstract class
     - any class that extends this class MUST implement all abstract methods
       (that is, they must actually write the method to their classes)
 
-An array is a speudo class
+An array is a pseudo class
 - a contiguous block of memory that can store multiple values of a single type
 
 public class Ademo{
