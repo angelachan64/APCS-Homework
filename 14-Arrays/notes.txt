@@ -1,0 +1,5 @@
+state machine:
+- either add a number or you don't add a numer
+  - start in the add state
+  - i.e. if the example is 6, go into the don't add state
+  - if in don't add state, go into the add state

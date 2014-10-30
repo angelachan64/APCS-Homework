@@ -98,3 +98,7 @@ public class Ademo{
 
 you MUST declare how big the array is before you are able to define the
 individual variables in the array
+
+you can put weapons, potions, and armor in your inventory
+you can also have a shop and a list of spells
+array of monsters, party members
