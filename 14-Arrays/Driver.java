@@ -12,6 +12,7 @@ public class Driver{
         int[] array7 = new int[4];
         int[] array8 = new int[21];
         int[] array9 = new int[]{1,1,2,1,2,3,1,2,3,4,1,2,3,4,5,1,2,3,4,5,6};
+	int[] array10 = new int[]{7,1,2,9,7,2,1};
         array7 = as.tenRun(array3);
         array8 = as.seriesUp(6);
         String s = "";
@@ -35,5 +36,6 @@ public class Driver{
         System.out.println(as.canBalance(array6));
         System.out.println(s2);
         System.out.println(as.freq(array5, 2));
+	System.out.println(as.maxMirror(array10));
     }
 }

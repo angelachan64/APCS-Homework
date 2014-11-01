@@ -120,4 +120,31 @@ public class Array{
         }
         return count;
     }
+    /*doesn't work*/
+    public int maxMirror(int[] nums) {
+        int[] reversed = new int[nums.length];
+        for (int i=0; i<nums.length; i++) {
+            reversed[i] = nums[nums.length - 1 - i];
+        }
+        int ans = 0;
+        int count = 0;
+        int num = -1;
+        for (int i = 0;i<nums.length;i++){
+            num = reversed[i];
+            System.out.println("num is:" + num);
+            while (count<nums.length){
+                System.out.println("c is:" + count);
+                if (num == nums[count]){
+                    System.out.println("nums[c] is: " + nums[count]);
+                    ans = ans + 1;
+                    count = count + 1;
+                    break;
+                }
+                else{
+                    count = count + 1;
+                }
+            }
+        }
+    return ans;
+    }
 }
