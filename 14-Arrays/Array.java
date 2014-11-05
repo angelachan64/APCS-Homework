@@ -131,11 +131,11 @@ public class Array{
         int num = -1;
         for (int i = 0;i<nums.length;i++){
             num = reversed[i];
-            System.out.println("num is:" + num);
+            //System.out.println("num is:" + num);
             while (count<nums.length){
-                System.out.println("c is:" + count);
+                //System.out.println("c is:" + count);
                 if (num == nums[count]){
-                    System.out.println("nums[c] is: " + nums[count]);
+                    //System.out.println("nums[c] is: " + nums[count]);
                     ans = ans + 1;
                     count = count + 1;
                     break;
@@ -146,5 +146,15 @@ public class Array{
             }
         }
     return ans;
+    }
+    public int mode(int[] nums){
+	int result = nums[0];
+	int compare = freq(nums, 0);
+	for (int i = 1;i<nums.length;i++){
+	    if (compare < freq(nums, i)){
+	        result = nums[i];
+	    }
+	}
+	return result;
     }
 }

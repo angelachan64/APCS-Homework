@@ -3,6 +3,7 @@ import java.util.*;
 public class Driver{
     public static void main(String[] args){
         Array as = new Array();
+	Random r = new Random();
         int[] array1 = new int[]{1,6,2,6,2,7,1,6,99,99,7};
         int[] array2 = new int[]{1,4,1,4,1,6};
         int[] array3 = new int[]{1,20,50,50};
@@ -13,6 +14,10 @@ public class Driver{
         int[] array8 = new int[21];
         int[] array9 = new int[]{1,1,2,1,2,3,1,2,3,4,1,2,3,4,5,1,2,3,4,5,6};
 	int[] array10 = new int[]{7,1,2,9,7,2,1};
+	int[] array11 = new int[10];
+	for (int i = 0;i<array11.length;i++){
+	    array11[i] = r.nextInt(11);
+	}
         array7 = as.tenRun(array3);
         array8 = as.seriesUp(6);
         String s = "";
@@ -35,7 +40,8 @@ public class Driver{
         System.out.println(as.tripleUp(array4));
         System.out.println(as.canBalance(array6));
         System.out.println(s2);
-        System.out.println(as.freq(array5, 2));
+        System.out.println(as.freq(array11, 2));
 	System.out.println(as.maxMirror(array10));
+	System.out.println(as.mode(array11));
     }
 }
