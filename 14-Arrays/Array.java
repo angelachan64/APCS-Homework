@@ -157,4 +157,32 @@ public class Array{
 	}
 	return result;
     }
+    public int maxVal(int[] nums){
+	int result = nums[0];
+	for (int i=1;i<nums.length;i++){
+	    if (nums[i] > result){
+		result = nums[i];
+	    }
+	}
+	return result;
+    }
+    public int mode2(int[] nums){
+	int total = maxVal(nums);
+	int[] count = new int[total+1];
+	for (int i=0;i<nums.length;i++){
+	    count[nums[i]] = count[nums[i]] + 1;
+	}
+	int result = -1;
+	for (int i=0;i<count.length;i++){
+	    if (count[i]>result){
+		result = i;
+	    }
+	}
+	return result;
+    }
+    public static void main(String[] args){
+	int[] test = new int[]{1,1,2,3,4,5,7,8,9,1,1,5,2,4,5,1,1,4,5,4,8,1,1,4};
+	Array as = new Array();
+	System.out.println(as.mode2(test));
+    }
 }
