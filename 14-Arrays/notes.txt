@@ -23,3 +23,12 @@ public int fastmode(){
        return tallies[m];
 }
        
+methods you need in SArray:
+- add(int i) (add to end)
+- add(int index, int i) (add at location index, shift everything else down)
+- get(int index)
+- set(int index, int i) (replaces item)
+- size() (tell how many elements in set)
+- remove(int index) (must shift things over)
+
+Add methods might require growing
