@@ -67,3 +67,38 @@ public class Driver{
 	      System.out.println("Did it");
       }
 }
+
+abstract class
+- a class that you cannot instantiate
+- you can extend
+- CAN have abstract methods
+  - public abstract void attack(BaseChar other);
+    - this is an abstract method. It consists of the method declaration line
+      with the word abstract in it followed by a ;.
+    - any class that extends this class MUST implement all abstract methods
+      (that is, they must actually write the method to their classes)
+
+An array is a pseudo class
+- a contiguous block of memory that can store multiple values of a single type
+
+public class Ademo{
+       public static void main(String[]args){
+       	      //declare an array to hold ints
+	      int[] intArray;
+	      //declare an array to hold Strings
+	      String[] stringArray;
+	      //allocate a block big enough to hold 5 ints and refer intArray
+	      //to it
+	      intArray = new int[5];
+	      //allocate a block big enough to hold 5 Strings and refer
+	      //stringArray to it
+	      stringArray = new String[5];
+       }
+}
+
+you MUST declare how big the array is before you are able to define the
+individual variables in the array
+
+you can put weapons, potions, and armor in your inventory
+you can also have a shop and a list of spells
+array of monsters, party members

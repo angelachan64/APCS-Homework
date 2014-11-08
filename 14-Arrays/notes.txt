@@ -1,0 +1,34 @@
+state machine:
+- either add a number or you don't add a numer
+  - start in the add state
+  - i.e. if the example is 6, go into the don't add state
+  - if in don't add state, go into the add state
+
+set up array of buckets for the tallies
+public int fastmode(){
+       int max = maxVal();
+       int[] tallies = new int[max+1];
+       //Java initializes this to 0 so we don't need this loop
+       /*for (int i = 0;i < tallies.length;i++){
+       	     talles[i] = 0;
+       }*/
+       for (int i=0;i<a.length;i++)
+       	   tallies[a[i]] += 1;
+       }
+       for (int i=0;i<tallies.length;i++){
+       	   System.out.println(i+": " + tallies[i])
+       }
+       int m = maxIndex(tallies);
+       System.out.println("modeval = "+m);
+       return tallies[m];
+}
+       
+methods you need in SArray:
+- add(int i) (add to end)
+- add(int index, int i) (add at location index, shift everything else down)
+- get(int index)
+- set(int index, int i) (replaces item)
+- size() (tell how many elements in set)
+- remove(int index) (must shift things over)
+
+Add methods might require growing

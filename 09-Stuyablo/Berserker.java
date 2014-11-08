@@ -1,6 +1,10 @@
 public class Berserker extends BaseChar{
     private double healthBoost = 10;
+<<<<<<< HEAD
     private double strengthBoost = 10;
+=======
+    private double strengthBoost = 5;
+>>>>>>> 62246cb58939b084fe4fb69bd05c57bf3e46220d
     public void inputName(String name){
         super.inputName(name);
     }
