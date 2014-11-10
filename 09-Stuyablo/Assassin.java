@@ -1,5 +1,9 @@
 public class Assassin extends BaseChar{
+<<<<<<< HEAD
+    private double dexBoost = 10;
+=======
     private double dexBoost = 5;
+>>>>>>> 62246cb58939b084fe4fb69bd05c57bf3e46220d
     private double luckBoost = 10;
     public void inputName(String name){
         super.inputName(name);
