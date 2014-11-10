@@ -1,0 +1,29 @@
+import java.util*;
+
+public class ArrayStuff{
+       private int[] a;
+       public final int final_example = 123;
+       public ArrayStuff(int n){
+       	      a = new int[100];
+	      for (int i=0;i<a.length;i++){
+		  a[i] = rand.nextInt(76)+75;
+	      }
+       }
+     /*public String toString(){
+       	      String s = "" + a.length;
+       	      final_example = 321;
+       	      s = s + final_example;
+       	      return s;
+       }*/
+       public static void main(String[] args){
+       	      Arraystuff as = new Arraystuff();
+       	      System.out.println(as);
+       }
+    public String toString(){
+	String s;
+	for (int i=0;i<a.length;i++){
+	    s = s + a[i]+", ";
+	}
+	return s;
+    }
+}
