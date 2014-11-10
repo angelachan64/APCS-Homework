@@ -1,0 +1,61 @@
+Each variable points to its own memory address
+i.e. s1 points to "hello" and s2 point to "hello" (same thing) but s3 and s4
+create their own new memory by saying new String("hello")
+
+classes :
+    FOR STRINGS
+    	== compares memory addresses
+    	equals method compares the data in the class (i.e. s1.equals(s2))
+	if we want to see if two strings are equal (regardless of memory
+	address)
+	we have to use the equals method
+	method compareTo
+	s1.compareTo(s2)
+		returns 0 if s1 is the same as s2
+		val < 0 if s1 < s2
+		val > 0 if s1 > s2
+	
+Classes :
+    Strings
+    whatever we write
+Primite data types:
+    int - integer
+    double - floating point
+    boolean - true or false
+    char - a single character
+ex : int i=7;
+     int j;
+     j = i + y;
+NOTICE WE DON'T USE STRINGS WITH PRIMITIVE DATA TYPES. The value is just stated
+directly in the variable's memory box. This is because integers, chars, doubles,
+and booleans take a fixed amount of space (64 bits maximum). However, because
+you don't know how long a string is going to be, you must make a new string
+memory box every time you make a new string.
+i.e. new String("Hello World!")
+If strings had a memory box, since memory boxes only take up to 64 bits, you can
+only have a limited number of characters in a string. Instead of putting the
+string itself in the box, it stores the location of the new string memory.
+
+How do if statements work?
+if _Boolean_
+   [Truepart]
+
+OR
+
+ifelse _Boolean_
+   [Truepart]
+   [Falsepart]
+
+OR
+
+if _Boolean expression_
+   [Single statement];
+
+OR
+
+if _Boolean expression_{
+   s1;
+   s2;
+   s3;
+   s4;
+}

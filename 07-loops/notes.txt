@@ -1,0 +1,6 @@
+the while loop is a general purpose counting loop that can be used for anything
+for loop is just like the while loop
+for(i=0;i<h,i+4)
+- for (initialization;test;change/increment)
+  - exact same components in the while loop !!
+  - the for loop becomes a while loop in a java compiler

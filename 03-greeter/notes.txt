@@ -1,0 +1,48 @@
+Local variables of the same name shadow or hide instance variables
+
+Instance variables declared in a class outside of the methods (typically above)
+each object has its own copy of the instance variables that can have per object
+values
+i.e. g1.greeting -- 'Sup!
+     g2.greeting -- Hello World!
+
+They're like turtle variables. All turtles have color but each turtle color var
+able can be set independently.
+
+(Instance variable : Greeting g1 = new Greeter(); & Greeter g2 = new Greeter();)
+(Local variable : g1.greeting = new String("'Sup!");
+
+In Java, typically NEVER MAKE INSTANCE VARIABLES PUBLIC. But if you make the
+private, you can't create local variables because greeting is private. Instance
+variables are almost always private. We access them with accessor methods get
+and set.
+
+i.e. public void setGreeting(String s){
+     	    greeting = s;}
+^^^method with parameter^^^
+
+EXAMPLE IN THIS FOLDER
+
+g1.setGreeting("Hello") setGreeting(s), s becomes Hello, Greeting becomes hello
+
+new String("Sup!") makes a new block of memory, puts Sup! in it, and then
+returns its address
+
+g2.setGreeting("Howdy!"); here we're using the string literal Howdy! and Java
+just returns its address without grabbing a new block of memory. If we use
+"Howdy!" a bunch of times, they'll all point to the same "Howdy" whereas if we
+use a new String a bunch of times, each will point to a different one.
+
+get doesn't need parameters because it's getting an already existing value so
+instead it returns the greeting but you need to tell java what type to return.
+Void means don't return anything so we have to tell java to return a string by
+saying "public String getGreeting()" in order to say we're sending back a String
+
+a constructor is always public and runs automatically with you instantiate the
+class. That is, if you have: Greeter g = new Greeter("Hello!") then Java will
+automatically call this constructor sending Hello in as parameter g. It will
+then set the instance variable greeting to what g refers to, which is hello.
+
+We can overload methods (including constructors) which means we have more than
+one method with the same name. They just have to have different "signatures"
+which means different parameter types.
