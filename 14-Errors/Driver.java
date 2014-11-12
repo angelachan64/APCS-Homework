@@ -4,7 +4,7 @@ public class Driver{
 	try{
 	    ee.etest(55);
 	    System.out.println("Everything worked ok");
-	} catch(ArrayIndexOutOfBounds Exception e){
+	} catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("Error - we got - "+e);
 	} catch (ArithmeticException e){
 	    System.out.println("Arithmetic error");

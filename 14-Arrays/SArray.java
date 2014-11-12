@@ -7,6 +7,10 @@ public class SArray{
 		data = new int[i];
     }
     public boolean add(int i){
+    	/*if (size() == data.length){
+    		throw new ArrayIndexOutOfBoundsException();
+    	}
+    	*/
     	if (data.length == size()){
     		int[] tempArray = new int[data.length + 5];
     		for (int n=0;n<data.length;n++){
@@ -31,6 +35,9 @@ public class SArray{
 		return true;
     }
     public void add(int index, int i){
+    	if (index > data.length - 1 || index < 0){
+    		throw new ArrayIndexOutOfBoundsException();
+    	}
     	if (data.length>size()){
 			if (data[index] == 0){
 			    data[index] = i;
@@ -89,6 +96,13 @@ public class SArray{
 		}
 		return s;
     }
+    /*public void test(Object x){
+    	if (x == (int)x){
+    		throw new ArrayStoreException();
+    	}
+    	System.out.println("Works fine.");
+    }*/
+    
     
     /* MAIN FUNCTION */
     
@@ -105,7 +119,14 @@ public class SArray{
         as.add(6);
         as.add(1);
         as.add(7);
-        as.add(4);
+        try{
+        	as.add(99,4);
+        	System.out.println("worked");
+        } catch(ArrayIndexOutOfBoundsException e){
+        	System.out.println("We got a " + e + " error");
+        } catch(Exception e){
+        	System.out.println("Some other Error");
+        }
 		//System.out.println(as.toString());
 		as.set(2,4);
 		//System.out.println("There are " + as.size() + " elements in this array.");
