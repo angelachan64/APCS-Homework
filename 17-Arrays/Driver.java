@@ -17,16 +17,27 @@ public class Driver{
 	
 	int num;
 	int ind = r.nextInt(ai.size());
+	while (fin.contains(-1)){
 	for (int i=0;i<ai.size();i++){
 	    num = ai.get(i);
-	    while (fin.get(ind) == -1){
+	    System.out.println(num + " " + ind + " " + fin.get(ind));
 		if (fin.get(ind) == -1){
 		    fin.set(ind,num);
 		}
 		else{
-		    ind = r.nextInt(ai.size());
-		}
+			while (fin.get(ind) != -1){
+		    	ind = r.nextInt(ai.size());
+		    	if (fin.get(ind)==-1){
+		    		fin.set(ind,num);
+		    	}
+		    	else{
+		    		ind = r.nextInt(ai.size());
+		    	}
+			}
+			System.out.println(num + " " + ind + " " + fin.get(ind));
 	    }
+	    ind = r.nextInt(ai.size());
+	}
 	}
 	System.out.println(fin);
     }
