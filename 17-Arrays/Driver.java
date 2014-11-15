@@ -6,7 +6,7 @@ public class Driver{
 	ArrayList<Integer> ai = new ArrayList<Integer>();
 	Random r = new Random();
 	for (int i=0;i<10;i++){
-	    ai.add(r.nextInt(5));
+	    ai.add(i);
 	}
 	ArrayList<Integer> fin = new ArrayList<Integer>();
 	for (int i=0;i<ai.size();i++){
@@ -20,7 +20,7 @@ public class Driver{
 	while (fin.contains(-1)){
 	for (int i=0;i<ai.size();i++){
 	    num = ai.get(i);
-	    System.out.println(num + " " + ind + " " + fin.get(ind));
+	    //System.out.println(num + " " + ind + " " + fin.get(ind));
 		if (fin.get(ind) == -1){
 		    fin.set(ind,num);
 		}
@@ -29,13 +29,12 @@ public class Driver{
 		    	ind = r.nextInt(ai.size());
 		    	if (fin.get(ind)==-1){
 		    		fin.set(ind,num);
-		    	}
-		    	else{
-		    		ind = r.nextInt(ai.size());
+		    		System.out.println(fin);
+		    		break;
 		    	}
 			}
-			System.out.println(num + " " + ind + " " + fin.get(ind));
-	    }
+		}
+			//System.out.println(num + " " + ind + " " + fin.get(ind));
 	    ind = r.nextInt(ai.size());
 	}
 	}
