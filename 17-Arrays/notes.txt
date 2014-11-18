@@ -1,0 +1,12 @@
+you can make an array or arraylist of arrays or arraylist to make them nonlinear
+int[] a = new array named a of ints
+int[][] a = new array named a of arrays of ints
+
+int[][] a = new int[5][3];
+conceptually, we are making an array of 5 arrays that each hold 3 ints
+OR we could be making an array of 3 arrays that each hold 5 ints
+Some programs just make a large array of the total number of elements and it
+will either break it up by every 3 or 5
+
+it is faster to use the large array method! But sometimes programs don't use
+this method
