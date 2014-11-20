@@ -39,12 +39,30 @@ public class WordSearch{
     }
     public void addWord(String w){
     	int rand = rnd.nextInt(8);
-    	while (rand != 0){
-    	    rand = rnd.nextInt(8);
-    	}
     	if (rand == 0){
     	    addWordH1(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length()));
     	}
+	else if (rand == 1){
+	    addWordH2(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length())+w.length());
+	}
+	else if (rand == 2){
+	    addWordV1(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length));
+	}
+	else if (rand == 3){
+	    addWordV2(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length));
+	}
+	else if (rand == 4){
+	    addWordD1(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length-w.length()));
+	}
+	else if (rand == 5){
+	    addWordD2(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length()));
+	}
+	else if (rand == 6){
+	    addWordD3(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length())+w.length());
+	}
+	else if (rand == 7){
+	    addWordD4(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length()));
+	}
     }
     public boolean matching(int n, String w, int r, int c){
 	boolean matching = true;
