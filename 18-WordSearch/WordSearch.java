@@ -46,26 +46,54 @@ public class WordSearch{
     	    addWordH1(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length()));
     	}
     }
-    public void addWordH1(String w, int ro, int co){
-        boolean matching = true;
-        int row = ro;
-        int col = co;
-        char val;
-    	//System.out.println(w + " " + r + " " + c);
-    	for (int i=0;i<w.length();i++){
-    	    val = board[row][col];
-    	    //System.out.println(val + " " + w.charAt(i));
-    	    if (!(val=='.') && !(val==w.charAt(i))){
-    	        matching = false;
-    	        break;
-    	    }
-    	    col++;
-    	}
-    	if (matching){
+    public boolean matching(int n, String w, int r, int c){
+	boolean matching = true;
+	char val;
+	for (int i=0;i<w.length();i++){
+	    val = board[r][c];
+	    if (!(val=='.') && !(val==w.charAt(i))){
+		matching = false;
+		break;
+	    }
+	    if (n == 0){
+		c++;
+	    }
+	    else if (n == 1){
+		c--;
+	    }
+	    else if (n == 2){
+		r++;
+	    }
+	    else if (n == 3){
+		r--;
+	    }
+	    else if (n == 4){
+		r--;
+		c++;
+	    }
+	    else if (n == 5){
+		r++;
+		c++;
+	    }
+	    else if (n == 6){
+		r++;
+		c--;
+	    }
+	    else if (n == 7){
+		r--;
+		c--;
+	    }
+	}
+	return matching;
+    }
+
+    /* SMALLER CHUNKS */
+    public void addWordH1(String w, int r, int c){
+    	if (matching(0, w, r, c)){
     	    for (int i=0;i<w.length();i++){
     	        //System.out.println(w.charAt(i));
-    	        board[ro][co] = w.charAt(i);
-        	    co++;
+    	        board[r][c] = w.charAt(i);
+        	    c++;
     	    }
     	}
     	else{
@@ -73,19 +101,7 @@ public class WordSearch{
     	}
     }
     public void addWordH2(String w, int r, int c){
-        boolean matching = true;
-        int col = c;
-        int row = r;
-        char val;
-        for (int i=0;i<w.length();i++){
-            val = board[row][col];
-            if (!(val=='.') && !(val==w.charAt(i))){
-                matching = false;
-                break;
-            }
-            col--;
-        }
-        if (matching){
+        if (matching(1, w, r, c)){
             for (int i=0;i<w.length();i++){
                 board[r][c] = w.charAt(i);
                 c--;
