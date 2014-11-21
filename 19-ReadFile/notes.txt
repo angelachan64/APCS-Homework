@@ -1,0 +1,6 @@
+you ALWAYS need a try catch block OR you can throw an exception
+
+if you don't specify a path to the file, it looks in the current directory
+
+usually initializes to 0 or null but you can do =null; to make it work because
+Java thinks it might not be initialized when used later
