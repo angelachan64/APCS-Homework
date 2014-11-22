@@ -25,7 +25,7 @@ public class WordSearch{
 
     /* METHODS */
     public WordSearch(){
-	    this(30,20);
+	    this(30,30);
         }
     public String toString(){
     	String s = "";
@@ -37,32 +37,33 @@ public class WordSearch{
     	}
     	return s;
     }
-    public void addWord(String w){
+    public boolean addWord(String w){
     	int rand = rnd.nextInt(8);
     	if (rand == 0){
-    	    addWordH1(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length()));
+    	    return addWordH1(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length()));
     	}
 		else if (rand == 1){
-		    addWordH2(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length())+w.length());
+		    return addWordH2(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length())+w.length());
 		}
 		else if (rand == 2){
-		    addWordV1(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length));
+		    return addWordV1(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length));
 		}
 		else if (rand == 3){
-		    addWordV2(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length));
+		    return addWordV2(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length));
 		}
 		else if (rand == 4){
-		    addWordD1(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length-w.length()));
+		    return addWordD1(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length-w.length()));
 		}
 		else if (rand == 5){
-		    addWordD2(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length()));
+		    return addWordD2(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length()));
 		}
 		else if (rand == 6){
-		    addWordD3(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length())+w.length());
+		    return addWordD3(w, rnd.nextInt(board.length-w.length()), rnd.nextInt(board[0].length-w.length())+w.length());
 		}
 		else if (rand == 7){
-		    addWordD4(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length-w.length())+w.length());
+		    return addWordD4(w, rnd.nextInt(board.length-w.length())+w.length(), rnd.nextInt(board[0].length-w.length())+w.length());
 		}
+		return false;
     }
     public boolean matching(int n, String w, int r, int c){
 		boolean matching = true;
@@ -71,7 +72,6 @@ public class WordSearch{
 		    val = board[r][c];
 		    if (!(val=='.') && !(val==w.charAt(i))){
 				matching = false;
-				break;
 		    }
 		    if (n == 0){
 				c++;
@@ -117,79 +117,154 @@ public class WordSearch{
     }
 	
     /* SMALLER CHUNKS */
-    public void addWordH1(String w, int r, int c){
-    	if (matching(0, w, r, c)){
-    	    for (int i=0;i<w.length();i++){
-    	        //System.out.println(w.charAt(i));
-    	        board[r][c] = w.charAt(i);
-        	    c++;
-    	    }
+    int count;
+    public boolean addWordH1(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+    		if (matching(0, w, r, c)){
+    	    	for (int i=0;i<w.length();i++){
+    	    	    //System.out.println(w.charAt(i));
+    	    	    board[r][c] = w.charAt(i);
+        		    c++;
+    	    	}
+    	    	return true;
+    		}
+    		else{
+    			r = rnd.nextInt(board.length);
+    			c = rnd.nextInt(board[0].length-w.length());
+    			count++;
+    		}
     	}
-    	else{
-    	    addWordH1(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length()));
+    	return false;
+    }
+    public boolean addWordH2(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+	       if (matching(1, w, r, c)){
+	            for (int i=0;i<w.length();i++){
+	                board[r][c] = w.charAt(i);
+	                c--;
+	            }
+	            return true;
+	        }
+	        else{
+	        	r = rnd.nextInt(board.length);
+	        	c = rnd.nextInt(board[0].length-w.length())+w.length();
+	       		count++;
+	        }
     	}
+		return false;
     }
-    public void addWordH2(String w, int r, int c){
-        if (matching(1, w, r, c)){
-            for (int i=0;i<w.length();i++){
-                board[r][c] = w.charAt(i);
-                c--;
-            }
-        }
-        else{
-            addWordH2(w, rnd.nextInt(board.length), rnd.nextInt(board[0].length-w.length())+w.length());
-        }
-    }
-    public void addWordV1(String w, int r, int c){
-    	if (matching(2, w, r, c)){
-        	for (int i=0;i<w.length();i++){
-        	    board[r][c] = w.charAt(i);
-        	    r++;
-        	}
+    public boolean addWordV1(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+	    	if (matching(2, w, r, c)){
+	        	for (int i=0;i<w.length();i++){
+	        	    board[r][c] = w.charAt(i);
+	        	    r++;
+	        	}
+	        	return true;
+	    	}
+	    	else{
+	    		r = rnd.nextInt(board.length-w.length());
+	    		c = rnd.nextInt(board[0].length);
+	    		count++;
+	    	}
     	}
+    	return false;
     }
-    public void addWordV2(String w, int r, int c){
-		if (matching(3, w, r, c)){
-			for (int i=0;i<w.length();i++){
-				board[r][c] = w.charAt(i);
-				r--;
+    public boolean addWordV2(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+			if (matching(3, w, r, c)){
+				for (int i=0;i<w.length();i++){
+					board[r][c] = w.charAt(i);
+					r--;
+				}
+				return true;
 			}
-		}
+			else{
+				r = rnd.nextInt(board.length-w.length())+w.length();
+				c = rnd.nextInt(board[0].length);
+				count++;
+			}
+    	}
+    	return false;
     }
-    public void addWordD1(String w, int r, int c){
-		if (matching(4, w,r, c)){
-			for (int i=0;i<w.length();i++){
-				board[r][c] = w.charAt(i);
-				r--;
-				c++;
+    public boolean addWordD1(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+			if (matching(4, w,r, c)){
+				for (int i=0;i<w.length();i++){
+					board[r][c] = w.charAt(i);
+					r--;
+					c++;
+				}
+				return true;
 			}
-		}
+			else{
+				r = rnd.nextInt(board.length-w.length())+w.length();
+				c = rnd.nextInt(board[0].length-w.length());
+				count++;
+			}
+    	}
+    	return false;
     }
-    public void addWordD2(String w, int r, int c){
-		if (matching(5, w, r, c)){
-			for (int i=0;i<w.length();i++){
-				board[r][c] = w.charAt(i);
-				r++;
-				c++;
+    public boolean addWordD2(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+			if (matching(5, w, r, c)){
+				for (int i=0;i<w.length();i++){
+					board[r][c] = w.charAt(i);
+					r++;
+					c++;
+				}
+				return true;
 			}
-		}
+			else{
+				r = rnd.nextInt(board.length-w.length());
+				c = rnd.nextInt(board[0].length-w.length());
+				count++;
+			}
+    	}
+    	return false;
     }
-    public void addWordD3(String w, int r, int c){
-		if (matching(6, w, r ,c)){
-			for (int i=0;i<w.length();i++){
-				board[r][c] = w.charAt(i);
-				r++;
-				c--;
+    public boolean addWordD3(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+			if (matching(6, w, r ,c)){
+				for (int i=0;i<w.length();i++){
+					board[r][c] = w.charAt(i);
+					r++;
+					c--;
+				}
+				return true;
 			}
-		}
+			else{
+				r = rnd.nextInt(board.length-w.length());
+				c = rnd.nextInt(board[0].length-w.length())+w.length();
+				count++;
+			}
+    	}
+    	return false;
     }
-    public void addWordD4(String w, int r, int c){
-		if (matching(7, w, r, c)){
-			for (int i=0;i<w.length();i++){
-				board[r][c] = w.charAt(i);
-				r--;
-				c--;
+    public boolean addWordD4(String w, int r, int c){
+    	count = 0;
+    	while (count<5){
+			if (matching(7, w, r, c)){
+				for (int i=0;i<w.length();i++){
+					board[r][c] = w.charAt(i);
+					r--;
+					c--;
+				}
+				return true;
 			}
-		}
+			else{
+				r = rnd.nextInt(board.length-w.length())+w.length();
+				c = rnd.nextInt(board[0].length-w.length())+w.length();
+				count++;
+			}
+	    }
+	    return false;
     }
 }

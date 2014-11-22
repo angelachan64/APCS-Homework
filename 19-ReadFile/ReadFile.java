@@ -14,6 +14,7 @@ public class ReadFile{
 	while (sc.hasNext()){
 	    String s = sc.next();
 	    System.out.println("Word: "+s);
+	    
 	}
     }
 }

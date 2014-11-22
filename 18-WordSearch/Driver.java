@@ -26,15 +26,20 @@ public class Driver{
 	    
 	    ArrayList<Integer> al = new ArrayList<Integer>();
 	    int index;
-	    for (int i=0;i<20;i++){
+	    int count = 0;
+	    for (int i=0;i<30;i++){
 	    	index = r.nextInt(words.size());
 	    	while (al.contains(index)){
 		    index = r.nextInt(words.size());
+	    	};
+	    	if(ws.addWord(words.get(index))){
+	    	al.add(index);
+	    	count++;
 	    	}
-	    	ws.addWord(words.get(i));
 	    }
 
 	    //ws.fill();
 	    System.out.println(ws.toString());
+	    System.out.println(count);
     }
 }
