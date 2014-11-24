@@ -38,8 +38,13 @@ public class Driver{
 	    	}
 	    }
 
-	    //ws.fill();
+	    ws.fill();
 	    System.out.println(ws.toString());
-	    System.out.println(count);
+	    String s = "";
+	    for (int i=0;i<al.size();i++){
+		s += words.get(al.get(i)) + ", ";
+	    }
+	    System.out.println(s);
+	    //System.out.println(count);
     }
 }
