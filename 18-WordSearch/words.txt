@@ -102,4 +102,8 @@ pumpkin
 poop
 pickles
 mousse
-
+shallot
+beet
+wine
+leek
+scallion
