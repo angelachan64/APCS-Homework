@@ -1,24 +1,34 @@
 import java.util.*;
+import java.io.*;
 
 public class SArray{
-    public E[] data; //should be object[]
+    public String[] data; //should be object[]
+    public SArray(){
+    	data = new String[10];
+    	for (int j=0;j<data.length;j++){
+    		data[j]="";
+    	}
+    }
     public SArray(int i){
 	//start Array at size 10
-	data = new int[i];
+	data = new String[i];
+	for (int j=0;j<data.length;j++){
+    	data[j]="";
     }
-    public boolean add(int i){
+    }
+    public boolean add(String i){
     	/*if (size() == data.length){
 	  throw new ArrayIndexOutOfBoundsException();
 	  }
     	*/
     	if (data.length == size()){
-	    int[] tempArray = new int[data.length + 5];
+	    String[] tempArray = new String[data.length + 5];
 	    for (int n=0;n<data.length;n++){
 		tempArray[n] = data[n];
 	    }
 	    data = tempArray;
 	    for(int n=0;n<data.length;n++){
-		if(data[n]==0){
+		if(data[n].compareTo("") == 0){
 		    data[n] = i;
 		    break;
 		}
@@ -26,7 +36,7 @@ public class SArray{
     	}
     	else{
 	    for(int n=0;n<data.length;n++){
-		if(data[n]==0){
+		if(data[n].compareTo("") == 0){
 		    data[n] = i;
 		    break;
 		}
@@ -34,12 +44,12 @@ public class SArray{
     	}
 	return true;
     }
-    public void add(int index, int i){
+    public void add(int index, String i){
     	if (index > data.length - 1 || index < 0){
 	    throw new ArrayIndexOutOfBoundsException();
     	}
     	if (data.length>size()){
-	    if (data[index] == 0){
+	    if (data[index].compareTo("") == 0){
 		data[index] = i;
 	    }
 	    else{
@@ -50,12 +60,12 @@ public class SArray{
 	    }
     	}
     	else{
-	    int[] tempArray = new int[data.length + 5];
+	    String[] tempArray = new String[data.length + 5];
 	    for (int n=0;n<data.length;n++){
 		tempArray[n] = data[n];
 	    }
 	    data = tempArray;
-	    if (data[index] == 0){
+	    if (data[index].compareTo("") == 0){
 		data[index] = i;
 	    }
 	    else{
@@ -70,23 +80,23 @@ public class SArray{
     public int size(){
     	int result = 0;
     	for(int i=0;i<data.length;i++){
-	    if (data[i] != 0){
+	    if (data[i].compareTo("") < 0){
 		result = result + 1;
 	    }
     	}
     	return result;
     }
-    public int get(int index){
+    public String get(int index){
     	return data[index];
     }
-    public int set(int index, int i){
-    	int result = data[index];
+    public String set(int index, String i){
+    	String result = data[index];
     	data[index] = i;
     	return result;
     }
-    public int remove(int index){
-    	int result = data[index];
-    	data[index] = 0;
+    public String remove(int index){
+    	String result = data[index];
+    	data[index] = "";
     	return result;
     }
     public String toString(){
@@ -109,7 +119,7 @@ public class SArray{
     public static void main(String[] args){
 	SArray as = new SArray(10);
 	//System.out.println(as.toString());
-	as.add(5);
+	/*as.add(5);
 	as.add(7);
 	as.add(1,8);
         as.add(3,9);
@@ -139,7 +149,7 @@ public class SArray{
 	as.add(6);
 	as.add(3);
 	System.out.println(as.toString());
-	as.add(3,8);
+	as.add(3,8);*/
 	//System.out.println("After removal, the item at position 2 is now " + as.get(2) + ".");
 	System.out.println(as.toString());
     }
