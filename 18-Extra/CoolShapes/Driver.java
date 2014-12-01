@@ -10,6 +10,7 @@ public class Driver{
     public static void main(String[] args){
     	Random r = new Random();
 	    WordSearch ws = new WordSearch();
+	    //ws.shapeIt();
 	    /*String[] words = new String[]{"bacon", "brownies", "pancakes", "cookies",
 	    "steak", "spaghetti", "apple", "orange", "banana", "hamburger", 
 	    "biscuit", "blackberry", "cheesecake", "lasagna", "lobster", "macaroon", 
@@ -33,7 +34,7 @@ public class Driver{
 	    int index;
 	    int count = 0;
 	    //for (int i=0;i<30;i++){
-	    while(count<30){
+	    while(count<10){
 	    	index = r.nextInt(words.size());
 	    	while (al.contains(index)){
 		    index = r.nextInt(words.size());
@@ -44,7 +45,7 @@ public class Driver{
 	    	}
 	    }
 
-	    ws.fill();
+	    //ws.fill();
 	    System.out.println(ws.toString());
 	    String s = "";
 	    int num = 0;
@@ -62,7 +63,7 @@ public class Driver{
 		    num = 0;
 		}
 	    }
-	    System.out.println(s);
-	    System.out.println(count);
+	    //System.out.println(s);
+	    //System.out.println(count);
     }
 }

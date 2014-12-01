@@ -17,17 +17,100 @@ public class WordSearch{
     /* CONSTRUCTORS */
     public WordSearch(int r,int c){
     	board = new char[r][c];
-    	for (int i=0;i<board.length;i++){
+    	/*for (int i=0;i<board.length;i++){
     	    for (int j=0;j<board[i].length;j++){
     		    board [i][j] = '.';
     	    }
-    	}
+	}*/
+	Scanner shapes = null;
+	try{
+	    shapes = new Scanner(new File("shapes.txt"));
+	} catch (Exception e){
+	    System.out.println("oops");
+	    System.exit(0);
+	}
+	    
+	ArrayList<String> shapething = new ArrayList<String>();
+	    
+	int lineNumber = 0;
+	/*while(shapes.hasNextLine()){
+	    System.out.println(shapes.nextLine());
+	    lineNumber++;
+	}*/
+	    
+	int s = 0; //shaper.nextInt(4); // chooses shape (0-3)
+    	
+	if (s == 0){ // reads the file, takes the lines for the <3
+	    while (lineNumber < 30){
+		shapes.nextLine();
+		String shapestring = shapes.nextLine();
+		shapething.add(shapestring);
+		lineNumber++;
+		//System.out.println(shapething);
+	    }
+	}
+	else if (s == 1) {
+	    /*while (lineNumber < 33) {
+		shapes.nextLine();
+		lineNumber++;
+	    }
+	    */
+	    lineNumber = 33;
+	    while (lineNumber < 63) {
+		shapes.nextLine();
+		String shapestring = shapes.nextLine();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	else if (s == 2) {
+	    /*while (lineNumber < 64) {
+		shapes.nextLine();
+		lineNumber++;
+	    }*/
+	    lineNumber = 64;
+	    while (lineNumber < 94) {
+		shapes.nextLine();
+		String shapestring = shapes.nextLine();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	else if (s == 3){
+	    /*while (lineNumber < 96) {
+		shapes.nextLine();
+		lineNumber++;
+	    }*/
+	    lineNumber = 96;
+	    while (lineNumber < 126) {
+		shapes.nextLine();
+		String shapestring = shapes.nextLine();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	int col = 0;
+	int column = 0;
+	String row;
+	//System.out.println(shapething.size());
+	for (int i=0;i<shapething.size();i++){
+	    row = shapething.get(i);
+	    while (col<row.length()){
+		board[i][column] = row.charAt(col);
+		//System.out.println(row.charAt(col));
+		col+=2;
+		column++;
+		//System.out.println(toString());
+	    }
+	    col = 0;
+	    column = 0;
+	}
     }
 
     /* METHODS */
     public WordSearch(){
-	    this(30,30);
-        }
+	this(30,30);
+    }
     public String toString(){
     	String s = "";
     	for (int i=0;i<board.length;i++){
@@ -243,9 +326,9 @@ public class WordSearch{
 				return true;
 			}
 			else{
-				r = rnd.nextInt(board.length-w.length());
-				c = rnd.nextInt(board[0].length-w.length())+w.length();
-				count++;
+			    r = rnd.nextInt(board.length-w.length());
+			    c = rnd.nextInt(board[0].length-w.length())+w.length();
+			    count++;
 			}
     	}
     	return false;
@@ -253,98 +336,108 @@ public class WordSearch{
     public boolean addWordD4(String w, int r, int c){
     	count = 0;
     	while (count<5){
-			if (matching(7, w, r, c)){
-				for (int i=0;i<w.length();i++){
-					board[r][c] = w.charAt(i);
-					r--;
-					c--;
-				}
-				return true;
-			}
-			else{
-				r = rnd.nextInt(board.length-w.length())+w.length();
-				c = rnd.nextInt(board[0].length-w.length())+w.length();
-				count++;
-			}
+	    if (matching(7, w, r, c)){
+		for (int i=0;i<w.length();i++){
+		    board[r][c] = w.charAt(i);
+		    r--;
+		    c--;
+		}
+		return true;
 	    }
-	    return false;
+	    else{
+		r = rnd.nextInt(board.length-w.length())+w.length();
+		c = rnd.nextInt(board[0].length-w.length())+w.length();
+		count++;
+	    }
+	}
+	return false;
     }
     
-    /*
-    public String[][] shapeIt (){
-    	Scanner shapes = null;
-	    try{
-		shapes = new Scanner(new File("shapes.txt"));
-	    } catch (Exception e){
-		System.out.println("oops");
-		System.exit(0);
-	    }
+    
+    /*public void shapeIt(){
+	Scanner shapes = null;
+	try{
+	    shapes = new Scanner(new File("shapes.txt"));
+	} catch (Exception e){
+	    System.out.println("oops");
+	    System.exit(0);
+	}
 	    
-	    ArrayList<String> shapething = new ArrayList<String>();
+	ArrayList<String> shapething = new ArrayList<String>();
 	    
-	    int lineNumber = 0;
-        while(shapes.hasNextLine()){
-            System.out.println(shapes.nextLine());
-            lineNumber++;
-        }
+	int lineNumber = 0;
+	while(shapes.hasNextLine()){
+	    System.out.println(shapes.nextLine());
+	    lineNumber++;
+	}
 	    
-    	int s = shaper.nextInt(4); // chooses shape (0-3)
+	int s = shaper.nextInt(4); // chooses shape (0-3)
     	
-    	if (s = 0){ // reads the file, takes the lines for the <3
-    	while (lineNumber < 31){
-    	while(shapes.hasNextLine()){
-            shapes.nextLine();
-            String shapestring = shapes.next();
-            shapething.add(shapestring);
-            lineNumber++;
-        }
-    	}
-    	} else {
-    		if (s = 1) {
-    			while (lineNumber < 33) {
-    				shapes.nextLine();
-    				lineNumber++;
-    			}
-    			while (lineNumber < 63) {
-    				shapes.nextLine();
-    				String shapestring = shapes.next();
-    				shapething.add(shapestring);
-    				lineNumber++;
-    			}
-    		}
-    	}
-    		else {
-    			if (s = 2) {
-    				while (lineNumber < 64) {
-    				shapes.nextLine();
-    				lineNumber++;
-    			}
-    			while (lineNumber < 94) {
-    				shapes.nextLine();
-    				String shapestring = shapes.next();
-    				shapething.add(shapestring);
-    				lineNumber++;
-    			}
-    			}
-    		} else {
-    			if (s = 3){
-    				while (lineNumber < 96) {
-    				shapes.nextLine();
-    				lineNumber++;
-    			}
-    			while (lineNumber < 126) {
-    				shapes.nextLine();
-    				String shapestring = shapes.next();
-    				shapething.add(shapestring);
-    				lineNumber++;
-    			}
-    			}
-    		}
-    	return shapes;
-    }
-    
-    public String[][] prettyPuzzle(String w, int r, int c){
-    	// adds word to the shape decided in shapeIt
-    }
+	if (s == 0){ // reads the file, takes the lines for the <3
+	    while (lineNumber < 30){
+		shapes.nextLine();
+		String shapestring = shapes.next();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	else if (s == 1) {
+	    while (lineNumber < 33) {
+		shapes.nextLine();
+		lineNumber++;
+	    }
+	    
+	    lineNumber = 33;
+	    while (lineNumber < 63) {
+		shapes.nextLine();
+		String shapestring = shapes.next();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	else if (s == 2) {
+	    while (lineNumber < 64) {
+		shapes.nextLine();
+		lineNumber++;
+	    }
+	    lineNumber = 64;
+	    while (lineNumber < 94) {
+		shapes.nextLine();
+		String shapestring = shapes.next();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	else if (s == 3){
+	    while (lineNumber < 96) {
+		shapes.nextLine();
+		lineNumber++;
+	    }
+	    lineNumber = 96;
+	    while (lineNumber < 126) {
+		shapes.nextLine();
+		String shapestring = shapes.next();
+		shapething.add(shapestring);
+		lineNumber++;
+	    }
+	}
+	int col = 0;
+	String row;
+	for (int i=0;i<shapething.size();i++){
+	    row = shapething.get(i);
+	    while (col<row.length()){
+		board[i][col] = row.charAt(col);
+		col++;
+	    }
+	    col = 0;
+	}
+    }*/
+    /*
+      public String[][] prettyPuzzle(String w, int r, int c){
+      // adds word to the shape decided in shapeIt
+      }
     */
+    public static void main(String[] args){
+	WordSearch ws = new WordSearch();
+    }
 }
