@@ -1,0 +1,5 @@
+i=0
+look at the array from 0 to end
+find minimum
+swap that with element in i
+i++

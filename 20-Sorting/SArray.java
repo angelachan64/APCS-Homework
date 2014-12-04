@@ -114,13 +114,31 @@ public class SArray{
       }*/
     public void isort(){
     	for (int i=0;i<data.length;i++){
-    		int ind=0;
-    		String newvalue = data[i];
-			for (ind = i; ind > 0 && newvalue.length() < data[ind-1].length() ; ind--) {
+	    int ind=0;
+	    String newvalue = data[i];
+	    for (ind = i; ind > 0 && newvalue.compareTo(data[ind-1])<0;ind--){
     		data[ind] = data[ind-1];
-		}
-		data[ind]=newvalue;
+		//System.out.println(ind);
+	    }
+	    data[ind]=newvalue;
     	}
+    }
+    public void ssort(){
+	String temp, swap;
+	int ind = 0;
+	for (int i=0;i<data.length;i++){
+	    temp = data[i];
+	    swap = data[i];
+	    ind = i;
+	    for (int n=i;n<data.length;n++){
+	        if (temp.compareTo(data[n]) > 0){
+		    temp = data[n];
+		    ind = n;
+		}
+	    }
+	    data[ind] = swap;
+	    data[i] = temp;
+	}
     }
     
     /* MAIN FUNCTION */
@@ -168,7 +186,8 @@ public class SArray{
 	as.add("peach");
 	as.add("willywonka");
 	as.add("chocolate");
-	as.isort();
+	//as.isort();
+	as.ssort();
 	System.out.println(as.toString());
     }
 }
