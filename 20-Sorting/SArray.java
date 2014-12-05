@@ -17,10 +17,10 @@ public class SArray{
     }
     }
     public boolean add(String i){
-    	/*if (size() == data.length){
-	  throw new ArrayIndexOutOfBoundsException();
-	  }
-    	*/
+    	//if (size() == data.length){
+	  //throw new ArrayIndexOutOfBoundsException();
+	  //}
+    	
     	if (data.length == size()){
 	    String[] tempArray = new String[data.length + 5];
 	    for (int n=0;n<data.length;n++){
@@ -44,6 +44,39 @@ public class SArray{
     	}
 	return true;
     }
+    /*public void add(int index, String i){
+    	/*if (index > data.length - 1 || index < 0){
+    		throw new ArrayIndexOutOfBoundsException();
+    	}
+    	if (data.length>size()){
+			if (data[index] == 0){
+			    data[index] = i;
+			}
+			else{
+			    for(int n=data.length-1;n>index;n--){
+					data[n] = data[n-1];
+			    }
+			    data[index] = i;
+			}
+    	}
+    	else{
+    		int[] tempArray = new int[data.length + 5];
+    		for (int n=0;n<data.length;n++){
+    			tempArray[n] = data[n];
+    		}
+    		data = tempArray;
+			if (data[index] == 0){
+			    data[index] = i;
+			}
+			else{
+			    for(int n=data.length-1;n>index;n--){
+					data[n] = data[n-1];
+			    }
+			    data[index] = i;
+			}
+    	}
+    	
+    }*/
     public void add(int index, String i){
     	/*if (index > data.length - 1 || index < 0){
 	    throw new ArrayIndexOutOfBoundsException();
@@ -140,6 +173,24 @@ public class SArray{
 	    data[i] = temp;
 	}
     }
+    public void bsort(){
+    	String temp,swap;
+    	int count = 0;
+    	while (count<data.length){
+    		for (int i=0;i<data.length-1;i++){
+    			temp = data[i];
+    			swap = data[i+1];
+    			if (temp.compareTo(swap)>0){
+    				data[i] = swap;
+    				data[i+1] = temp;
+    				count = 0;
+    			}
+    			else{
+    				count++;
+    			}
+    		}
+    	}
+    }
     
     /* MAIN FUNCTION */
     
@@ -186,8 +237,20 @@ public class SArray{
 	as.add("peach");
 	as.add("willywonka");
 	as.add("chocolate");
+	as.add("poop");
+	as.add("playground");
+	as.add("pretend");
+	as.add("realize");
+	as.add("grow");
+	as.add("before");
+	as.add("innocent");
+	as.add("unreal");
+	as.add("pinch");
+	as.add("movie");
+	as.add("friend");
 	//as.isort();
-	as.ssort();
+	//as.ssort();
+	as.bsort();
 	System.out.println(as.toString());
     }
 }
