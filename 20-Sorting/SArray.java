@@ -26,6 +26,7 @@ public class SArray{
 	    for (int n=0;n<data.length;n++){
 		tempArray[n] = data[n];
 	    }
+	    data = new String[data.length + 5];
 	    data = tempArray;
 	    for(int n=0;n<data.length;n++){
 		if(data[n].compareTo("") == 0){
