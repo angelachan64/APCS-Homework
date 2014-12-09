@@ -1,6 +1,6 @@
 For 20 items in an array:
 <br>
-____________________________________________________________
+___
 <br>
 Comparisons are about 30
 <br>
