@@ -16,7 +16,7 @@ class Sorts {
     }
 
     public Sorts() {
-	this(1000);
+	this(20);
     }
 
     public void fill(){
@@ -69,6 +69,26 @@ class Sorts {
 	    comp += 3;
 	}
     }
+    public void bsort(){
+    	int temp,swap;
+    	int c = 0;
+    	while (c<data.length){
+    		for (int i=0;i<data.length-1;i++){
+    			temp = data[i];
+    			swap = data[i+1];
+    			comp += 2;
+    			if (temp > swap){
+    				data[i] = swap;
+    				data[i+1] = temp;
+    				c = 0;
+    				count++;
+    			}
+    			else{
+    				c++;
+    			}
+    		}
+    	}
+    }
 
     public void builtin() {
 	/* this sorts the whole array, if you want to sort only some of it
@@ -88,11 +108,11 @@ class Sorts {
     }
     public static void main(String[] args) {
 	Sorts s = new Sorts();
-	//System.out.println(s);
+	System.out.println(s);
 	//s.builtin();
 	s.ssort();
-	//System.out.println(s);
-	System.out.println(s.count);
-	System.out.println(s.comp);
+	System.out.println(s);
+	System.out.println("Comparisons are " + s.count);
+	System.out.println("Assignments are " + s.comp);
     }
 }
