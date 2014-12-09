@@ -16,7 +16,7 @@ class Sorts {
     }
 
     public Sorts() {
-	this(20);
+	this(100000);
     }
 
     public void fill(){
@@ -108,10 +108,12 @@ class Sorts {
     }
     public static void main(String[] args) {
 	Sorts s = new Sorts();
-	System.out.println(s);
+	//System.out.println(s);
 	//s.builtin();
-	s.ssort();
-	System.out.println(s);
+	//s.ssort();
+	//s.isort();
+	s.bsort();
+	//System.out.println(s);
 	System.out.println("Comparisons are " + s.count);
 	System.out.println("Assignments are " + s.comp);
     }
