@@ -27,6 +27,7 @@ Assignments are around 110
 Takes around 0.100 seconds
 <br>
 <i>For 1000 items:</i>
+<br>
 Takes around 0.150 seconds
 <br>
 <i>For 100,000 items:</i>
@@ -41,7 +42,9 @@ Comparisons are about 105
 Assignments are around 700
 <br>
 Takes around 0.110 secnds
+<br>
 <i>For 1000 items:</i>
+<br>
 Takes around 0.126 seconds
 <br>
 <i>For 100,000 items:</i>
