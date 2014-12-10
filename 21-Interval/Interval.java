@@ -67,8 +67,10 @@ public class Interval implements Comparable{
 	    a[n] = new Interval();
 	}
 	System.out.println(Arrays.toString(a));
-	for (int n=0;n<a.length-1;n++){
+	/*for (int n=0;n<a.length-1;n++){
 	    System.out.println(a[n].compareTo(a[n+1]));
-	}
+	}*/
+	Arrays.sort(a);
+	System.out.println(Arrays.toString(a));
     }
 }
