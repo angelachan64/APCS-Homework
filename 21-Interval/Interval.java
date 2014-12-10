@@ -11,8 +11,8 @@ public class Interval implements Comparable{
 	numIntervals = numIntervals + 1;
     }
     public Interval(){
-	int a = r.nextInt(20) - 10;
-	int b = a + 1 + r.nextInt(20);
+	int a = r.nextInt(100) - 50;
+	int b = a + 1 + r.nextInt(100);
 	low = a;
 	high = b;
 	numIntervals = numIntervals + 1;
@@ -25,10 +25,10 @@ public class Interval implements Comparable{
     }
     /*private void setLow(Interval i){
 
-    }
-    private void setHigh(Interval i){
+      }
+      private void setHigh(Interval i){
 
-    }*/
+      }*/
     public String toString(){
 	String result = /*"Interval " + numIntervals + ": " +*/"[" + low + "," + high + "]";
 	return result;
@@ -38,7 +38,7 @@ public class Interval implements Comparable{
     }
     public int compareTo(Object other){
 	/*cast other to the appropriate type and store in a local variable for
-	convenience*/
+	  convenience*/
 	Interval o = (Interval)other;
     	//int num, Onum;
     	//num =a.getLow();
@@ -52,6 +52,7 @@ public class Interval implements Comparable{
     	} else{
 	    return this.low - o.low;
 	}
+	//return (this.high-this.low) - (o.high-o.low);
     }
     public static void main(String[] args){
 	//for (int i=0;i<10;i++){
@@ -66,8 +67,8 @@ public class Interval implements Comparable{
 	    a[n] = new Interval();
 	}
 	System.out.println(Arrays.toString(a));
-    for (int n=0;n<a.length-1;n++){
-    	System.out.println(a[n].compareTo(a[n+1]));
-    }
+	for (int n=0;n<a.length-1;n++){
+	    System.out.println(a[n].compareTo(a[n+1]));
+	}
     }
 }
