@@ -17,13 +17,13 @@ public class Interval{
 	high = b;
 	numIntervals = numIntervals + 1;
     }
-    /*private int getLow(Interval i){
-	return 0;
+    private int getLow(){
+	return this.low;
     }
-    private int getHigh(Interval i){
-	return 0;
+    private int getHigh(){
+	return this.high;
     }
-    private void setLow(Interval i){
+    /*private void setLow(Interval i){
 
     }
     private void setHigh(Interval i){
@@ -35,6 +35,18 @@ public class Interval{
     }
     public static void printstuff(){
 	System.out.println("Stuff");
+    }
+    public int compareTo(Interval a, Interval b){
+    	int num, Onum;
+    	num =a.getLow();
+    	Onum = b.getLow();
+    	//System.out.println(num + " " + Onum);
+    	if (num == Onum){
+    		num = a.getHigh();
+    		Onum = b.getHigh();
+    		//System.out.println(num + " " + Onum);
+    	}
+    	return num - Onum;
     }
     public static void main(String[] args){
 	//for (int i=0;i<10;i++){
@@ -49,5 +61,8 @@ public class Interval{
 	    a[n] = new Interval();
 	}
 	System.out.println(Arrays.toString(a));
+    for (int n=0;n<a.length-1;n++){
+    	System.out.println(i.compareTo(a[n], a[n+1]));
+    }
     }
 }
