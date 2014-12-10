@@ -1,0 +1,14 @@
+an interface is a specification that lists methods
+for example
+interface Name{
+method1 signature;
+method2 signature
+;
+}
+where method signature is:
+public/private return-type name (params);
+
+interface built into java called Comparable
+interface Comparable{
+    public int compareTo(object other);
+}

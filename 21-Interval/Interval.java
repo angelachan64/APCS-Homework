@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Interval{
     private int low,high;
-    Random r = new Random();
+    private static Random r = new Random();
     private static int numIntervals = 0;
     public Interval(int l, int h){
 	low = l;
@@ -11,8 +11,8 @@ public class Interval{
 	numIntervals = numIntervals + 1;
     }
     public Interval(){
-	int a = r.nextInt(100) - 50;
-	int b = a + 1 + r.nextInt(100);
+	int a = r.nextInt(20) - 10;
+	int b = a + 1 + r.nextInt(20);
 	low = a;
 	high = b;
 	numIntervals = numIntervals + 1;
@@ -36,17 +36,19 @@ public class Interval{
     public static void printstuff(){
 	System.out.println("Stuff");
     }
-    public int compareTo(Interval a, Interval b){
-    	int num, Onum;
-    	num =a.getLow();
-    	Onum = b.getLow();
+    public int compareTo(Interval other){
+    	//int num, Onum;
+    	//num =a.getLow();
+    	//Onum = b.getLow();
     	//System.out.println(num + " " + Onum);
-    	if (num == Onum){
-    		num = a.getHigh();
-    		Onum = b.getHigh();
-    		//System.out.println(num + " " + Onum);
-    	}
-    	return num - Onum;
+    	if (this.low == other.low){
+	    //num = a.getHigh();
+	    //Onum = b.getHigh();
+	    //System.out.println(num + " " + Onum);
+	    return this.high - other.high;
+    	} else{
+	    return this.low - other.low;
+	}
     }
     public static void main(String[] args){
 	//for (int i=0;i<10;i++){
@@ -62,7 +64,7 @@ public class Interval{
 	}
 	System.out.println(Arrays.toString(a));
     for (int n=0;n<a.length-1;n++){
-    	System.out.println(i.compareTo(a[n], a[n+1]));
+    	System.out.println(a[n].compareTo(a[n+1]));
     }
     }
 }
