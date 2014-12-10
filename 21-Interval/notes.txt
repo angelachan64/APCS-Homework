@@ -12,3 +12,11 @@ interface built into java called Comparable
 interface Comparable{
     public int compareTo(object other);
 }
+
+compareTo method is going to follow the rule that java gives in compareTo
+interface
+you can only extend one class but you can implement multiple interfaces
+i.e.
+class Interval implements Comparable, interface2, interface3, interface4{
+
+Intervals aren't that useful for smaller programs

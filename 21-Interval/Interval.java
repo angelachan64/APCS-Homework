@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Interval{
+public class Interval implements Comparable{
     private int low,high;
     private static Random r = new Random();
     private static int numIntervals = 0;
@@ -36,18 +36,21 @@ public class Interval{
     public static void printstuff(){
 	System.out.println("Stuff");
     }
-    public int compareTo(Interval other){
+    public int compareTo(Object other){
+	/*cast other to the appropriate type and store in a local variable for
+	convenience*/
+	Interval o = (Interval)other;
     	//int num, Onum;
     	//num =a.getLow();
     	//Onum = b.getLow();
     	//System.out.println(num + " " + Onum);
-    	if (this.low == other.low){
+    	if (this.low == o.low){
 	    //num = a.getHigh();
 	    //Onum = b.getHigh();
 	    //System.out.println(num + " " + Onum);
-	    return this.high - other.high;
+	    return this.high - o.high;
     	} else{
-	    return this.low - other.low;
+	    return this.low - o.low;
 	}
     }
     public static void main(String[] args){
