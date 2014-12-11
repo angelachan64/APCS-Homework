@@ -1,5 +1,4 @@
-public class Assassin extends BaseChar{
-    private double dexBoost = 10;
+public class Assassin extends BaseChar implements Comparable{
     private double dexBoost = 5;
     private double luckBoost = 10;
     public Assassin(String name){
@@ -41,5 +40,19 @@ public class Assassin extends BaseChar{
     public void executionerswaltz(BaseChar other){
          System.out.println(this + " dances around, throwing knives at Ogre from all angles at the beat of a waltz");
         
+    }
+    public String toString(){
+        String result = this.getName();
+        return result;
+    }
+    public int compareTo(Object other){
+        Assassin o = (Assassin)other;
+        if (this.getName().compareTo(o.getName())==0){
+            return 0;
+        } else if (this.getName().compareTo(o.getName())<0){
+            return -1;
+        } else{
+            return 1;
+        }
     }
 }
