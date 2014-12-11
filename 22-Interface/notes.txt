@@ -1,0 +1,13 @@
+1) send in string n with name
+2) send in an instance of class with name set (preferred)
+
+if the list is sorted, you don't have to do a linear search
+instead you can do a dictionary type search
+
+with an array of items 0 to n,
+you first want to jump to n/2
+if a[mid\ = what we want, we're done
+if www<a[mid]
+   h = mid-1
+else
+   l = mid + 1
