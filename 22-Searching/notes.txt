@@ -1,0 +1,9 @@
+when you use a linear search, it at most loops n times
+when you use a binary search, it uses log_BASE(2)n
+
+in linear, we subtract 1 item each time
+ - hallmark of a linear component
+ - look at something and take that one thing out
+ - you're subtracting out a constant fact
+in binary search, we divide out a chunk each time
+ - we can throw away half the data set each time
