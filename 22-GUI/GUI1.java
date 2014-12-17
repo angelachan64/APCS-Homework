@@ -7,6 +7,7 @@ public class GUI1 extends JFrame{
     private JLabel l;
     private JTextArea text;
     private JPanel canvas;
+    
     public GUI1(){
 	setTitle("My First GUI");
 	setSize(600,600);
@@ -14,14 +15,16 @@ public class GUI1 extends JFrame{
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 	pane = getContentPane();
-	pane.setLayout(new FlowLayout(3));
+	//pane.setLayout(new GridLayout(3,3));
+	pane.setLayout(new FlowLayout());
 	l = new JLabel("The Label:");
+	pane.add(l);
+	
 	b1 = new JButton("button");
 	pane.add(b1);
 	b2 = new JButton("exit");
 	pane.add(b2);
-	
-	text = new JTextArea("HELLO");
+	text = new JTextArea();
 	text.setColumns(40);
 	text.setRows(10);
 	text.setBorder(BorderFactory.createLineBorder(Color.red,2));
@@ -37,10 +40,10 @@ public class GUI1 extends JFrame{
 	pane.add(new JButton("hello3"));
 	JPanel f2 = new JPanel();
 	pane.add(f2);
-	f2.getContentPane().setLayout(new GridLayout(3,3));
-	f2.getContentPane().add(new JButton("aaa"));
-	f2.getContentPane().add(new JButton("aaa"));
-	f2.getContentPane().add(new JButton("aaa"));*/
+	f2.setLayout(new GridLayout(3,3));
+	f2.add(new JButton("aaa"));
+	f2.add(new JButton("aaa"));
+	f2.add(new JButton("aaa"));*/
     }
     public static void main(String[] args){
 	GUI1 f = new GUI1();
