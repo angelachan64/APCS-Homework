@@ -26,6 +26,14 @@ public class GUI2 extends JFrame implements ActionListener {
 	}
     }
 
+    private class Canvas extends JPanel{
+	public void paintComponent(Graphics g){
+	    super.paintComponent(g);
+	    g.setColor(Color.red);
+	    g.fillOval(30,30,30,30);
+	}
+    }
+
     public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == b1){
 	    System.out.println("You clicked click me");
@@ -74,7 +82,7 @@ public class GUI2 extends JFrame implements ActionListener {
 	text.addKeyListener(new Key());
 	pane.add(text);
 
-	canvas = new JPanel();
+	canvas = new Canvas();
 	canvas.setPreferredSize(new Dimension(300,300));
 	canvas.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(canvas);

@@ -6,3 +6,5 @@ there is a mouse listener and a mouse motion listener
    is clicked and moved)
 
 there is also a timer that can be used for animations
+
+when something has to be drawn, it calls paintComponent
