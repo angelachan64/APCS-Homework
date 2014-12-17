@@ -10,6 +10,8 @@ public class GUI2 extends JFrame implements ActionListener {
     private JTextArea text;
     private JPanel canvas;
     private JCheckBox box;
+    private int x = 0;
+    private int y = 0;
 
     private class Key implements KeyListener{
 	public void keyPressed(KeyEvent e){
@@ -30,7 +32,7 @@ public class GUI2 extends JFrame implements ActionListener {
 	public void paintComponent(Graphics g){
 	    super.paintComponent(g);
 	    g.setColor(Color.red);
-	    g.fillOval(30,30,30,30);
+	    g.fillOval(x,y,30,30);
 	}
     }
 
@@ -39,6 +41,9 @@ public class GUI2 extends JFrame implements ActionListener {
 	    System.out.println("You clicked click me");
 	    System.out.println("By the way, the text box has: "+text.getText());
 	    System.out.println();
+	    x = x + 5;
+	    y = y + 5;
+	    canvas.update(canvas.getGraphics());
 	} else if (e.getSource() == b2){
 	    System.out.println("Shutting down");
 	    System.exit(0);
