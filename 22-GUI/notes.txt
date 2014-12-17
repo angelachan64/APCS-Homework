@@ -1,1 +1,8 @@
 with GUIs, the screen is seen as a board of pixels
+
+there is a mouse listener and a mouse motion listener
+ - because the mouse listener doesn't include whether or not the mouse is
+   moving, you have to use mouse motion listener (which includes when the mouse
+   is clicked and moved)
+
+there is also a timer that can be used for animations
