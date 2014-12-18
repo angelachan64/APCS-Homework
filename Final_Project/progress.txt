@@ -1,0 +1,14 @@
+IDEAS :
+ - tower defense game
+   - In this game, you go on quests to to look for cards. These cards, if 
+     obtained, can be used during other quests or during battles, where you 
+     can summon the cards and use them to defend your base in a tower defense 
+     simulation. During these battles, you can hone your skills and use your
+     cards to gain experience points. You fight battles at random times while
+     you are completing the quest. You can gain cards of random power in battles
+     but the quest goal gives you the most powerful cards. The cards gain exp
+     for every battle, and they can level up to become stronger. Higher level
+     cards need more exp to level but gain more per level up.
+ 
+Made README.md
+Made this progress log thing
