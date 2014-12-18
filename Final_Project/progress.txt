@@ -1,14 +1,19 @@
 IDEAS :
  - tower defense game
-   - In this game, you go on quests to to look for cards. These cards, if 
-     obtained, can be used during other quests or during battles, where you 
-     can summon the cards and use them to defend your base in a tower defense 
-     simulation. During these battles, you can hone your skills and use your
-     cards to gain experience points. You fight battles at random times while
-     you are completing the quest. You can gain cards of random power in battles
-     but the quest goal gives you the most powerful cards. The cards gain exp
-     for every battle, and they can level up to become stronger. Higher level
-     cards need more exp to level but gain more per level up.
- 
+   - adventure-type game
+   - random encounter chance
+     - difficulty randomly set
+     - if encounter, enter tower defense mode (quest mode ?)
+     - regular tower defense like thing
+     - end of encounter : random chance to get card/unit
+       - randomly obtained
+   - cards can be enhanced by feeding it other cards
+     - each card gives a set amount of exp depending on its level and rarity
+     - higher rarity cards need more experience to level up
+     - experience needed gets higher per level
+     - higher rarity cards' stats have better growth
+_______________________________________________________________________________
+
+PROGRESS :
 Made README.md
 Made this progress log thing
