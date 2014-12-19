@@ -1,4 +1,5 @@
-Angela Chan, Victor Tan
+<b>Cards Against Insanity<b>
 <br>
-RIP in Pieces (need a cool name)
+Written by : Angela Chan, Victor tan
 <br>
+This game features adventure-like gameplay and 
